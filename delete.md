@@ -15,6 +15,6 @@ Deletes a row from the quadrille.
 
 # Parameters
 
-| param    | description                                                               |
-|----------|---------------------------------------------------------------------------|
-| row      | Number: number of row to be deleted [\[0..height\]]({{< ref "height" >}}) |
+| parameter | description                                                               |
+|-----------|---------------------------------------------------------------------------|
+| row       | Number: number of row to be deleted [\[0..height\]]({{< ref "height" >}}) |
