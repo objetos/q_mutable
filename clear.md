@@ -5,12 +5,12 @@ draft: false
 
 # `clear()`
 
-Clears quadrille cells (i.e., sets cells to `null`). Either a given cell, a given `row` or a set of identical cells using [flood fill](https://en.m.wikipedia.org/wiki/Flood_fill) or all cells.
+Clears quadrille cells (i.e., sets cells to `null`). Either all cells, a given cell, a given `row` or a set of identical cells using [flood fill](https://en.m.wikipedia.org/wiki/Flood_fill) or all cells.
 
 # Example
 
-(click on cell to clear quadrille; press any key to reset)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js@1.4.3/p5.quadrille.js" width="425" height="445" >}}
+(click on any cell; press 'c' to clear all cells or 'r' to reset)\
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="445" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 20;
 let quadrille;
@@ -60,7 +60,12 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  reset();
+  if (key === 'c') {
+    quadrille.clear();
+  }
+  if (key === 'r'){
+    reset();
+  }
 }
 
 function reset() {
@@ -120,7 +125,12 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  reset();
+  if (key === 'c') {
+    quadrille.clear();
+  }
+  if (key === 'r'){
+    reset();
+  }
 }
 
 function reset() {
@@ -135,15 +145,15 @@ function reset() {
 
 > `clear()`
 
+> `clear(row, col)`
+
 > `clear(row)`
 
-> `clear(row, col)`
+> `clear(row, col, directions, border)`
 
 > `clear(row, col, directions)`
 
 > `clear(row, col, border)`
-
-> `clear(row, col, directions, border)`
 
 # Parameters
 
