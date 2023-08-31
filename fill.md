@@ -65,7 +65,7 @@ function keyPressed() {
   if (key === 'f') {
     quadrille.fill(pattern);
   }
-  if (key === 'r'){
+  if (key === 'r') {
     reset();
   }
 }
@@ -131,7 +131,7 @@ function keyPressed() {
   if (key === 'f') {
     quadrille.fill(pattern);
   }
-  if (key === 'r'){
+  if (key === 'r') {
     reset();
   }
 }
