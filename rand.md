@@ -5,7 +5,7 @@ draft: false
 
 # `rand()`
 
-Fills the quadrille with `pattern` up to [order](/docs/props#order), randomly adding or removing cells as necessary.
+Fills the quadrille with `pattern` up to [order]({{< ref "order" >}}), randomly adding or removing cells as necessary.
 
 # Examples
 
