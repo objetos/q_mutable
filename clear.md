@@ -70,8 +70,8 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));
-  quadrille.rand(200, color('green')).rand(300, color('blue')).
-            rand(400, color('cyan'));
+  quadrille.rand(100, color('green')).rand(100, color('blue')).
+            rand(100, color('cyan'));
 }
 {{< /p5-global-iframe >}}
 
@@ -135,8 +135,8 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));
-  quadrille.rand(200, color('green')).rand(300, color('blue')).
-            rand(400, color('cyan'));
+  quadrille.rand(100, color('green')).rand(100, color('blue')).
+            rand(100, color('cyan'));
 }
 ```
 {{< /details >}}

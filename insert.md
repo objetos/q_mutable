@@ -37,8 +37,8 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 10, 50, color('red'));
-  quadrille.rand(100, color('green')).rand(150, color('blue')).
-            rand(200, color('cyan'));
+  quadrille.rand(50, color('green')).rand(50, color('blue')).
+            rand(50, color('cyan'));
 }
 {{< /p5-global-iframe >}}
 
@@ -69,8 +69,8 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 10, 50, color('red'));
-  quadrille.rand(100, color('green')).rand(150, color('blue')).
-            rand(200, color('cyan'));
+  quadrille.rand(50, color('green')).rand(50, color('blue')).
+            rand(50, color('cyan'));
 }
 ```
 {{< /details >}}

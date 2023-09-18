@@ -72,7 +72,7 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));
-  quadrille.rand(200, color('green')).rand(300, color('blue'));
+  quadrille.rand(100, color('green')).rand(100, color('blue'));
 }
 {{< /p5-global-iframe >}}
 
@@ -138,7 +138,7 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));
-  quadrille.rand(200, color('green')).rand(300, color('blue'));
+  quadrille.rand(100, color('green')).rand(100, color('blue'));
 }
 ```
 {{< /details >}}
@@ -161,7 +161,7 @@ function reset() {
 
 | parameter  | description                                                                                                                                                         |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| pattern    | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |
+| pattern    | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
 | row        | Number: col number of the cell to be filled [\[0..height\]]({{< ref "height" >}})                                                                                   |
 | col        | Number: row number of the cell to be filled [\[0..width\]]({{< ref "width" >}})                                                                                     |
 | directions | Number: 4 or 8 directions of flood fill default is 4                                                |

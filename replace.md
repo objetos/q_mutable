@@ -45,7 +45,7 @@ function keyPressed() {
 }
 
 function reset() {
-  quadrille = createQuadrille(10, 10, 25, red).rand(50, green).rand(75, blue);
+  quadrille = createQuadrille(10, 10, 25, red).rand(25, green).rand(25, blue);
 }
 {{< /p5-global-iframe >}}
 
@@ -84,7 +84,7 @@ function keyPressed() {
 }
 
 function reset() {
-  quadrille = createQuadrille(10, 10, 25, red).rand(50, green).rand(75, blue);
+  quadrille = createQuadrille(10, 10, 25, red).rand(25, green).rand(25, blue);
 }
 ```
 {{< /details >}}

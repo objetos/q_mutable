@@ -5,7 +5,7 @@ draft: false
 
 # `rand()`
 
-Fills the quadrille with `pattern` up to [order]({{< ref "order" >}}), randomly adding or removing cells as necessary.
+Randomly fills quadrille cells with `pattern` the specified number of `times`.
 
 # Examples
 
@@ -13,11 +13,11 @@ The `rand()` method is exemplified in [reflect]({{< ref "reflect#example" >}}), 
 
 # Syntax
 
-> `rand(order, pattern)`
+> `rand(times, pattern = null)`
 
 # Parameters
 
 | parameter | description                                                                                                                                                         |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| order     | Number: target number of non-empty cells                                                                                                                            |
-| pattern   | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |
+| times     | Number: number of repetitions cells                                                                                                                            |
+| pattern   | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
