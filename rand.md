@@ -5,80 +5,80 @@ draft: false
 
 # `rand()`
 
-Randomly (clear or) fill quadrille cells with `pattern` the specified number of `times`.
+Use `pattern` to randomly fill (or clear if `pattern` is `null`) cells the specified number of `times`.
 
 # Examples
 
-(**mouse clicked** (clear) fill cells; **c** key toggles clearing cells, **num** keys define `times`\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="355" height="355" >}}
+(numeric keys define repetition number of `times`, other keys define `pattern`, **c** sets it as `null`)\
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="355" height="385" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 30;
-let clearToggle;
-let times = 2;
-let patterns;
+let times = 5;
+let pattern, patterns;
 let quadrille;
+let p;
 
 function setup() {
   createCanvas(11 * Quadrille.CELL_LENGTH, 11 * Quadrille.CELL_LENGTH);
-  patterns = ['👻', '✈️', color('cyan'), 125, '🐒', '🐍'];
-  quadrille = createQuadrille(11, 11, times, random(patterns)); 
+  patterns = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
+  pattern = '🐒';
+  quadrille = createQuadrille(11, 11, times, pattern);
+  p = createP();
+  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
+         + times + ' time(s) with ' + pattern);
+  p.style('font-size', '16px');
+  p.position(10, height);
 }
 
 function draw() {
   background('yellow');
   drawQuadrille(quadrille);
-  stroke('blue');
-  fill('blue');
-  text((clearToggle ? 'Clears ' : 'Fills ') + times + ' time(s)', 10, 20);
 }
 
 function mouseClicked() {
-  quadrille.rand(times, clearToggle ? null : random(patterns));
+  quadrille.rand(times, pattern);
 }
 
 function keyPressed() {
-  if (key === 'c') {
-    clearToggle = !clearToggle;
-    return;
-  }
-  // convert string to number using + or assign 2 if key is nan
-  times = +key || 2;
+  +key ? times = +key : pattern = key === 'c' ? null : random(patterns);
+  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
+         + times + ' time(s) with ' + pattern);
 }
 {{< /p5-global-iframe >}}
 
 {{< details title="code" open=false >}}
 ```js
 Quadrille.CELL_LENGTH = 30;
-let clearToggle;
-let times = 2;
-let patterns;
+let times = 5;
+let pattern, patterns;
 let quadrille;
+let p;
 
 function setup() {
   createCanvas(11 * Quadrille.CELL_LENGTH, 11 * Quadrille.CELL_LENGTH);
-  patterns = ['👻', '✈️', color('cyan'), 125, '🐒', '🐍'];
-  quadrille = createQuadrille(11, 11, times, random(patterns)); 
+  patterns = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
+  pattern = '🐒';
+  quadrille = createQuadrille(11, 11, times, pattern);
+  p = createP();
+  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
+         + times + ' time(s) with ' + pattern);
+  p.style('font-size', '16px');
+  p.position(10, height);
 }
 
 function draw() {
   background('yellow');
   drawQuadrille(quadrille);
-  stroke('blue');
-  fill('blue');
-  text((clearToggle ? 'Clears ' : 'Fills ') + times + ' time(s)', 10, 20);
 }
 
 function mouseClicked() {
-  quadrille.rand(times, clearToggle ? null : random(patterns));
+  quadrille.rand(times, pattern);
 }
 
 function keyPressed() {
-  if (key === 'c') {
-    clearToggle = !clearToggle;
-    return;
-  }
-  // convert string to number using + or assign 2 if key is nan
-  times = +key || 2;
+  +key ? times = +key : pattern = key === 'c' ? null : random(patterns);
+  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
+         + times + ' time(s) with ' + pattern);
 }
 ```
 {{< /details >}}
