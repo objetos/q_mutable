@@ -87,5 +87,5 @@ function keyPressed() {
 
 | parameter | description                                                                                                                                                         |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| times     | Number: number of repetitions cells                                                                                                                            |
-| pattern   | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
+| times     | Number: number of cells to be (cleared) filled |
+| pattern   | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: clear cells |
