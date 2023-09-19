@@ -10,7 +10,7 @@ Use `pattern` to randomly fill (or clear if `pattern` is `null`) cells the speci
 # Examples
 
 (numeric keys define `times` while others define `pattern`, **c** sets it as `null`)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="355" height="385" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="385" height="415" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 30;
 let times = 5;
@@ -19,13 +19,13 @@ let quadrille;
 let p;
 
 function setup() {
-  createCanvas(11 * Quadrille.CELL_LENGTH, 11 * Quadrille.CELL_LENGTH);
+  createCanvas(12 * Quadrille.CELL_LENGTH, 12 * Quadrille.CELL_LENGTH);
   patterns = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
   pattern = '🐒';
-  quadrille = createQuadrille(11, 11, times, pattern);
+  quadrille = createQuadrille(12, 12, times, pattern);
   p = createP();
-  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
-         + times + ' time(s) with ' + pattern);
+  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + pattern));
   p.style('font-size', '16px');
   p.position(10, height);
 }
@@ -41,8 +41,8 @@ function mouseClicked() {
 
 function keyPressed() {
   +key ? times = +key : pattern = key === 'c' ? null : random(patterns);
-  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
-         + times + ' time(s) with ' + pattern);
+  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + pattern));
 }
 {{< /p5-global-iframe >}}
 
@@ -55,13 +55,13 @@ let quadrille;
 let p;
 
 function setup() {
-  createCanvas(11 * Quadrille.CELL_LENGTH, 11 * Quadrille.CELL_LENGTH);
+  createCanvas(12 * Quadrille.CELL_LENGTH, 12 * Quadrille.CELL_LENGTH);
   patterns = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
   pattern = '🐒';
-  quadrille = createQuadrille(11, 11, times, pattern);
+  quadrille = createQuadrille(12, 12, times, pattern);
   p = createP();
-  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
-         + times + ' time(s) with ' + pattern);
+  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + pattern));
   p.style('font-size', '16px');
   p.position(10, height);
 }
@@ -77,8 +77,8 @@ function mouseClicked() {
 
 function keyPressed() {
   +key ? times = +key : pattern = key === 'c' ? null : random(patterns);
-  p.html('mouse click: ' + (pattern === null ? 'clears ' : 'fills ')
-         + times + ' time(s) with ' + pattern);
+  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + pattern));
 }
 ```
 {{< /details >}}
