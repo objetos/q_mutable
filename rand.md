@@ -41,9 +41,8 @@ function keyPressed() {
     clearToggle = !clearToggle;
     return;
   }
-  // convert string to number using +
-  times = +key;
-  times = constrain(times ||= 1, 1, 9);
+  // convert string to number using + or assign 2 if key is nan
+  times = +key || 2;
 }
 {{< /p5-global-iframe >}}
 
@@ -78,9 +77,8 @@ function keyPressed() {
     clearToggle = !clearToggle;
     return;
   }
-  // convert string to number using +
-  times = +key;
-  times = constrain(times ||= 1, 1, 9);
+  // convert string to number using + or assign 2 if key is nan
+  times = +key || 2;
 }
 ```
 {{< /details >}}
