@@ -9,70 +9,78 @@ Randomly (clear or) fill quadrille cells with `pattern` the specified number of 
 
 # Examples
 
-(mouse clicked or key pressed fills / clears `quadrille`\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="355" height="415" >}}
+(**mouse clicked** (clear) fill cells; **c** key toggles clearing cells, **num** keys define `times`\
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="355" height="355" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 30;
-let mode;
-let times;
+let clearToggle;
+let times = 2;
 let patterns;
 let quadrille;
 
 function setup() {
   createCanvas(11 * Quadrille.CELL_LENGTH, 11 * Quadrille.CELL_LENGTH);
-  // modes
-  // false -> fill
-  // true -> clear
-  mode = createCheckbox('clear', false);
-  times = createSlider(1, 5, 2, 1);
   patterns = ['👻', '✈️', color('cyan'), 125, '🐒', '🐍'];
-  quadrille = createQuadrille(11, 11, times.value(), random(patterns)); 
+  quadrille = createQuadrille(11, 11, times, random(patterns)); 
 }
 
 function draw() {
   background('yellow');
   drawQuadrille(quadrille);
+  stroke('blue');
+  fill('blue');
+  text((clearToggle ? 'Clears ' : 'Fills ') + times + ' time(s)', 10, 20);
 }
 
 function mouseClicked() {
-  quadrille.rand(times.value(), mode.checked() ? null : random(patterns));
+  quadrille.rand(times, clearToggle ? null : random(patterns));
 }
 
 function keyPressed() {
-  quadrille.rand(times.value(), mode.checked() ? null : random(patterns));
+  if (key === 'c') {
+    clearToggle = !clearToggle;
+    return;
+  }
+  // convert string to number using +
+  times = +key;
+  times = constrain(times ||= 1, 1, 9);
 }
 {{< /p5-global-iframe >}}
 
 {{< details title="code" open=false >}}
 ```js
 Quadrille.CELL_LENGTH = 30;
-let mode;
-let times;
+let clearToggle;
+let times = 2;
 let patterns;
 let quadrille;
 
 function setup() {
   createCanvas(11 * Quadrille.CELL_LENGTH, 11 * Quadrille.CELL_LENGTH);
-  // modes
-  // false -> fill
-  // true -> clear
-  mode = createCheckbox('clear', false);
-  times = createSlider(1, 5, 2, 1);
   patterns = ['👻', '✈️', color('cyan'), 125, '🐒', '🐍'];
-  quadrille = createQuadrille(11, 11, times.value(), random(patterns)); 
+  quadrille = createQuadrille(11, 11, times, random(patterns)); 
 }
 
 function draw() {
   background('yellow');
   drawQuadrille(quadrille);
+  stroke('blue');
+  fill('blue');
+  text((clearToggle ? 'Clears ' : 'Fills ') + times + ' time(s)', 10, 20);
 }
 
 function mouseClicked() {
-  quadrille.rand(times.value(), mode.checked() ? null : random(patterns));
+  quadrille.rand(times, clearToggle ? null : random(patterns));
 }
 
 function keyPressed() {
-  quadrille.rand(times.value(), mode.checked() ? null : random(patterns));
+  if (key === 'c') {
+    clearToggle = !clearToggle;
+    return;
+  }
+  // convert string to number using +
+  times = +key;
+  times = constrain(times ||= 1, 1, 9);
 }
 ```
 {{< /details >}}
