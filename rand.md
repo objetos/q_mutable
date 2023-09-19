@@ -9,7 +9,7 @@ Use `pattern` to randomly fill (or clear if `pattern` is `null`) cells the speci
 
 # Examples
 
-(numeric keys define repetition number of `times`, other keys define `pattern`, **c** sets it as `null`)\
+(numeric keys define `times` while others define `pattern`, **c** sets it as `null`)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="355" height="385" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 30;
