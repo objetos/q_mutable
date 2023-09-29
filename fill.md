@@ -5,7 +5,7 @@ draft: false
 
 # `fill()`
 
-Fills quadrille cells with given `pattern`. Either current empty cells, a given cell, a given `row`, or a set of identical cells using [flood fill](https://en.m.wikipedia.org/wiki/Flood_fill).
+Fills quadrille cells with the given `value`. Either current empty cells, a given cell, a given `row`, or a set of identical cells using [flood fill](https://en.m.wikipedia.org/wiki/Flood_fill).
 
 # Example
 
@@ -14,7 +14,7 @@ Fills quadrille cells with given `pattern`. Either current empty cells, a given 
 `use strict`;
 Quadrille.CELL_LENGTH = 20;
 let quadrille;
-let pattern;
+let value;
 let mode;
 
 function setup() {
@@ -28,7 +28,7 @@ function setup() {
   mode.option('flood fill 8-directions border');
   mode.selected('cell');
   reset();
-  pattern = color('cyan');
+  value = color('cyan');
 }
 
 function draw() {
@@ -41,29 +41,29 @@ function mouseClicked() {
   const col = quadrille.mouseCol;
   switch(mode.value()) {
   case 'cell':
-    quadrille.fill(row, col, pattern);
+    quadrille.fill(row, col, value);
     break;
   case 'row':
-    quadrille.fill(row, pattern);
+    quadrille.fill(row, value);
     break;
   case 'flood fill 4-directions':
-    quadrille.fill(row, col, pattern, 4);
+    quadrille.fill(row, col, value, 4);
     break;
   case 'flood fill 4-directions border':
-    quadrille.fill(row, col, pattern, 4, true);
+    quadrille.fill(row, col, value, 4, true);
     break;
   case 'flood fill 8-directions':
-    quadrille.fill(row, col, pattern, 8);
+    quadrille.fill(row, col, value, 8);
     break;
   case 'flood fill 8-directions border':
-    quadrille.fill(row, col, pattern, 8, true);
+    quadrille.fill(row, col, value, 8, true);
     break;
   }
 }
 
 function keyPressed() {
   if (key === 'f') {
-    quadrille.fill(pattern);
+    quadrille.fill(value);
   }
   if (key === 'r') {
     reset();
@@ -80,7 +80,7 @@ function reset() {
 ```js
 Quadrille.CELL_LENGTH = 20;
 let quadrille;
-let pattern;
+let value;
 let mode;
 
 function setup() {
@@ -94,7 +94,7 @@ function setup() {
   mode.option('flood fill 8-directions border');
   mode.selected('cell');
   reset();
-  pattern = color('cyan');
+  value = color('cyan');
 }
 
 function draw() {
@@ -107,29 +107,29 @@ function mouseClicked() {
   const col = quadrille.mouseCol;
   switch(mode.value()) {
   case 'cell':
-    quadrille.fill(row, col, pattern);
+    quadrille.fill(row, col, value);
     break;
   case 'row':
-    quadrille.fill(row, pattern);
+    quadrille.fill(row, value);
     break;
   case 'flood fill 4-directions':
-    quadrille.fill(row, col, pattern, 4);
+    quadrille.fill(row, col, value, 4);
     break;
   case 'flood fill 4-directions border':
-    quadrille.fill(row, col, pattern, 4, true);
+    quadrille.fill(row, col, value, 4, true);
     break;
   case 'flood fill 8-directions':
-    quadrille.fill(row, col, pattern, 8);
+    quadrille.fill(row, col, value, 8);
     break;
   case 'flood fill 8-directions border':
-    quadrille.fill(row, col, pattern, 8, true);
+    quadrille.fill(row, col, value, 8, true);
     break;
   }
 }
 
 function keyPressed() {
   if (key === 'f') {
-    quadrille.fill(pattern);
+    quadrille.fill(value);
   }
   if (key === 'r') {
     reset();
@@ -145,23 +145,23 @@ function reset() {
 
 # Syntax
 
-> `fill(pattern)`
+> `fill(value)`
 
-> `fill(row, col, pattern)`
+> `fill(row, col, value)`
 
-> `fill(row, pattern)`
+> `fill(row, value)`
 
-> `fill(row, col, pattern, directions, border)`
+> `fill(row, col, value, directions, border)`
 
-> `fill(row, col, pattern, directions)`
+> `fill(row, col, value, directions)`
 
-> `fill(row, col, pattern, border)`
+> `fill(row, col, value, border)`
 
 # Parameters
 
 | parameter  | description                                                                                                                                                         |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| pattern    | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
+| value      | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: empty cells |
 | row        | Number: col number of the cell to be filled [\[0..height\]]({{< ref "height" >}})                                                                                   |
 | col        | Number: row number of the cell to be filled [\[0..width\]]({{< ref "width" >}})                                                                                     |
 | directions | Number: 4 or 8 directions of flood fill default is 4                                                |

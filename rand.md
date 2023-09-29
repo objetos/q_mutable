@@ -5,27 +5,27 @@ draft: false
 
 # `rand()`
 
-Use `pattern` to randomly fill (or clear if `pattern` is `null`) cells the specified number of `times`.
+Use `value` to randomly fill (or clear if `value` is `null`) cells the specified number of `times`.
 
 # Examples
 
-(numeric keys define `times` while others define `pattern`, **c** sets it as `null`)\
+(numeric keys define `times` while others define `value`, **c** sets it as `null`)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="385" height="415" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 30;
 let times = 5;
-let pattern, patterns;
+let value, values;
 let quadrille;
 let p;
 
 function setup() {
   createCanvas(12 * Quadrille.CELL_LENGTH, 12 * Quadrille.CELL_LENGTH);
-  patterns = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
-  pattern = '🐒';
-  quadrille = createQuadrille(12, 12, times, pattern);
+  values = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
+  value = '🐒';
+  quadrille = createQuadrille(12, 12, times, value);
   p = createP();
-  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
-         : 'fills ' + times + ' time(s) with ' + pattern));
+  p.html('mouse click: ' + (value === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + value));
   p.style('font-size', '16px');
   p.position(10, height);
 }
@@ -36,13 +36,13 @@ function draw() {
 }
 
 function mouseClicked() {
-  quadrille.rand(times, pattern);
+  quadrille.rand(times, value);
 }
 
 function keyPressed() {
-  +key ? times = +key : pattern = key === 'c' ? null : random(patterns);
-  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
-         : 'fills ' + times + ' time(s) with ' + pattern));
+  +key ? times = +key : value = key === 'c' ? null : random(values);
+  p.html('mouse click: ' + (value === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + value));
 }
 {{< /p5-global-iframe >}}
 
@@ -50,18 +50,18 @@ function keyPressed() {
 ```js
 Quadrille.CELL_LENGTH = 30;
 let times = 5;
-let pattern, patterns;
+let value, values;
 let quadrille;
 let p;
 
 function setup() {
   createCanvas(12 * Quadrille.CELL_LENGTH, 12 * Quadrille.CELL_LENGTH);
-  patterns = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
-  pattern = '🐒';
-  quadrille = createQuadrille(12, 12, times, pattern);
+  values = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
+  value = '🐒';
+  quadrille = createQuadrille(12, 12, times, value);
   p = createP();
-  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
-         : 'fills ' + times + ' time(s) with ' + pattern));
+  p.html('mouse click: ' + (value === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + value));
   p.style('font-size', '16px');
   p.position(10, height);
 }
@@ -72,13 +72,13 @@ function draw() {
 }
 
 function mouseClicked() {
-  quadrille.rand(times, pattern);
+  quadrille.rand(times, value);
 }
 
 function keyPressed() {
-  +key ? times = +key : pattern = key === 'c' ? null : random(patterns);
-  p.html('mouse click: ' + (pattern === null ? 'clears ' + times + ' time(s)'
-         : 'fills ' + times + ' time(s) with ' + pattern));
+  +key ? times = +key : value = key === 'c' ? null : random(values);
+  p.html('mouse click: ' + (value === null ? 'clears ' + times + ' time(s)'
+         : 'fills ' + times + ' time(s) with ' + value));
 }
 ```
 {{< /details >}}
@@ -87,11 +87,11 @@ function keyPressed() {
 
 # Syntax
 
-> `rand(times, pattern = null)`
+> `rand(times, value = null)`
 
 # Parameters
 
 | parameter | description                                                                                                                                                         |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | times     | Number: number of cells to be (cleared) filled |
-| pattern   | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: clear cells |
+| value     | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: clear cells |

@@ -5,7 +5,7 @@ draft: false
 
 # `replace()`
 
-Either replaces non empty cells with `pattern`, or `pattern1` filled cells with `pattern2`.
+Either replaces non empty cells with `value`, or `value1` filled cells with `value2`.
 
 # Examples
 
@@ -31,8 +31,8 @@ function draw() {
 }
 
 function mouseClicked() {
-  const pattern1 = quadrille.read(quadrille.mouseRow, quadrille.mouseCol);
-  quadrille.replace(pattern1, cyan);
+  const value1 = quadrille.read(quadrille.mouseRow, quadrille.mouseCol);
+  quadrille.replace(value1, cyan);
 }
 
 function keyPressed() {
@@ -70,8 +70,8 @@ function draw() {
 }
 
 function mouseClicked() {
-  const pattern1 = quadrille.read(quadrille.mouseRow, quadrille.mouseCol);
-  quadrille.replace(pattern1, cyan);
+  const value1 = quadrille.read(quadrille.mouseRow, quadrille.mouseCol);
+  quadrille.replace(value1, cyan);
 }
 
 function keyPressed() {
@@ -91,13 +91,14 @@ function reset() {
 
 # Syntax
 
-> `replace(pattern)`
+> `replace(value)`
 
-> `replace(pattern1, pattern2)`
+> `replace(value1, value2)`
 
 # Parameters
 
 | parameter | description                                                                                                                                                        |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| pattern1  | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |
-| pattern2  | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |
+| value   | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |
+| value1  | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |
+| value2  | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |
