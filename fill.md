@@ -5,21 +5,22 @@ draft: false
 
 # `fill()`
 
-Fills quadrille cells with the given `value`. Either current empty cells, a given cell, a given `row`, or a set of identical cells using [flood fill](https://en.m.wikipedia.org/wiki/Flood_fill).
+Fills quadrille cells in several ways: 1. Without value: as a chessboard; or, 2. With `value`: in current empty cells, a specific cell, a designated row, or a group of matching cells using [flood fill](https://en.m.wikipedia.org/wiki/Flood_fill).
 
 # Example
 
 (click on any cell; press 'f' to fill empty cells or 'r' to reset)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="445" >}}
+{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="425" height="445" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 20;
-let quadrille;
+let quadrille, board;
 let value;
 let mode;
 
 function setup() {
   createCanvas(400, 400);
   mode = createSelect();
+  mode.option('chess board pattern');
   mode.option('cell');
   mode.option('row');
   mode.option('flood fill 4-directions');
@@ -27,13 +28,19 @@ function setup() {
   mode.option('flood fill 8-directions');
   mode.option('flood fill 8-directions border');
   mode.selected('cell');
+  board = createQuadrille(20, 20).fill();
   reset();
   value = color('cyan');
 }
 
 function draw() {
   background('orange');
-  drawQuadrille(quadrille);
+  if (mode.value() === 'chess board pattern') {
+    drawQuadrille(board, { tileDisplay: 0 });
+  }
+  else {
+    drawQuadrille(quadrille);
+  }
 }
 
 function mouseClicked() {
@@ -79,13 +86,14 @@ function reset() {
 {{< details title="code" open=false >}}
 ```js
 Quadrille.CELL_LENGTH = 20;
-let quadrille;
+let quadrille, board;
 let value;
 let mode;
 
 function setup() {
   createCanvas(400, 400);
   mode = createSelect();
+  mode.option('chess board pattern');
   mode.option('cell');
   mode.option('row');
   mode.option('flood fill 4-directions');
@@ -93,13 +101,19 @@ function setup() {
   mode.option('flood fill 8-directions');
   mode.option('flood fill 8-directions border');
   mode.selected('cell');
+  board = createQuadrille(20, 20).fill();
   reset();
   value = color('cyan');
 }
 
 function draw() {
   background('orange');
-  drawQuadrille(quadrille);
+  if (mode.value() === 'chess board pattern') {
+    drawQuadrille(board, { tileDisplay: 0 });
+  }
+  else {
+    drawQuadrille(quadrille);
+  }
 }
 
 function mouseClicked() {
@@ -144,6 +158,8 @@ function reset() {
 {{< /details >}}
 
 # Syntax
+
+> `fill()`
 
 > `fill(value)`
 
