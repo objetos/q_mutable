@@ -10,7 +10,7 @@ Clears quadrille cells (i.e., sets cells to `null`). Either all cells, a given c
 # Example
 
 (click on any cell; press 'c' to clear all cells or 'r' to reset)\
-{{< p5-global-iframe lib1="/p5.quadrille.js/docs/libs/p5.quadrille.js" width="425" height="445" >}}
+{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="445" >}}
 `use strict`;
 Quadrille.CELL_LENGTH = 20;
 let quadrille;
