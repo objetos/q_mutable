@@ -12,7 +12,7 @@ Deletes a row from the quadrille.
 (click on any cell; press any key to reset)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 20;
+Quadrille.cellLength = 20;
 let quadrille;
 
 function setup() {
@@ -42,7 +42,7 @@ function reset() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 20;
+Quadrille.cellLength = 20;
 let quadrille;
 
 function setup() {

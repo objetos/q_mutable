@@ -12,14 +12,14 @@ Use `value` to randomly fill (or clear if `value` is `null`) cells the specified
 (numeric keys define `times` while others define `value`, **c** sets it as `null`)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="385" height="415" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 30;
+Quadrille.cellLength = 30;
 let times = 5;
 let value, values;
 let quadrille;
 let p;
 
 function setup() {
-  createCanvas(12 * Quadrille.CELL_LENGTH, 12 * Quadrille.CELL_LENGTH);
+  createCanvas(12 * Quadrille.cellLength, 12 * Quadrille.cellLength);
   values = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
   value = '🐒';
   quadrille = createQuadrille(12, 12, times, value);
@@ -48,14 +48,14 @@ function keyPressed() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 30;
+Quadrille.cellLength = 30;
 let times = 5;
 let value, values;
 let quadrille;
 let p;
 
 function setup() {
-  createCanvas(12 * Quadrille.CELL_LENGTH, 12 * Quadrille.CELL_LENGTH);
+  createCanvas(12 * Quadrille.cellLength, 12 * Quadrille.cellLength);
   values = ['👻', '✈️', null, color('cyan'), 125, '🐒', '🐍'];
   value = '🐒';
   quadrille = createQuadrille(12, 12, times, value);

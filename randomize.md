@@ -12,7 +12,7 @@ Randomly re-arranges the quadrille cells.
 (mouse click to randomize; press any key to reset)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 32;
+Quadrille.cellLength = 32;
 let mandrill;
 let quadrille;
 
@@ -40,7 +40,7 @@ function keyPressed() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 32;
+Quadrille.cellLength = 32;
 let mandrill;
 let quadrille;
 

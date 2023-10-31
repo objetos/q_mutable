@@ -12,7 +12,7 @@ Either replaces non empty cells with `value`, or `value1` filled cells with `val
 (click on any cell; press 'r' to replace filled cells or other key to reset)\
 {{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
 `use strict`;
-Quadrille.CELL_LENGTH = 40;
+Quadrille.cellLength = 40;
 let quadrille;
 let red, green, blue, cyan;
 
@@ -51,7 +51,7 @@ function reset() {
 
 {{< details title="code" open=false >}}
 ```js
-Quadrille.CELL_LENGTH = 40;
+Quadrille.cellLength = 40;
 let quadrille;
 let red, green, blue, cyan;
 
