@@ -4,13 +4,13 @@ weight: 4
 draft: false
 ---
 
-# Mutable methods
+# Mutators
 
-The mutable methods modified the calling `quadrille`.
+Mutator methods directly modify the state of the `quadrille` they are called upon. These transformations are persistent and affect the `quadrille` instance in-place.
 
 {{< hint info >}}
 **Observation**\
-The methods found in this section may be [chained](https://en.wikipedia.org/wiki/Method_chaining), e.g., `quadrille.clear().fill(5, '🐁').randomize()` which is equivalent to:
+Methods in this category support [method chaining](https://en.wikipedia.org/wiki/Method_chaining), allowing multiple modifications to be applied sequentially in a concise manner. For example, `quadrille.clear().fill(5, '🐁').randomize()` is functionally equivalent to applying each method separately:
 ```js
 quadrille.clear();
 quadrille.fill(5, '🐁');
