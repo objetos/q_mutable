@@ -10,7 +10,7 @@ Use `value` to randomly fill (or clear if `value` is `null`) cells the specified
 # Examples
 
 (numeric keys define `times` while others define `value`, **c** sets it as `null`)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="385" height="415" >}}
+{{< p5-global-iframe quadrille="true" width="385" height="415" >}}
 `use strict`;
 Quadrille.cellLength = 30;
 let times = 5;

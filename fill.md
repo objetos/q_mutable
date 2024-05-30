@@ -10,7 +10,7 @@ Fills quadrille cells in several ways: 1. Without value: as a chessboard; or, 2.
 # Example
 
 (click on any cell; press 'f' to fill empty cells or 'r' to reset)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="445" >}}
+{{< p5-global-iframe quadrille="true" width="425" height="445" >}}
 `use strict`;
 Quadrille.cellLength = 20;
 let quadrille, board;

@@ -10,7 +10,7 @@ Randomly re-arranges the quadrille cells.
 # Example
 
 (mouse click to randomize; press any key to reset)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="537" height="537" >}}
+{{< p5-global-iframe quadrille="true" width="537" height="537" >}}
 `use strict`;
 Quadrille.cellLength = 32;
 let mandrill;

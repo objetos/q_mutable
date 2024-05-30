@@ -10,7 +10,7 @@ Either replaces non empty cells with `value`, or `value1` filled cells with `val
 # Examples
 
 (click on any cell; press 'r' to replace filled cells or other key to reset)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js" width="425" height="425" >}}
+{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 `use strict`;
 Quadrille.cellLength = 40;
 let quadrille;
