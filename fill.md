@@ -157,10 +157,10 @@ function reset() {
 ```
 {{< /details >}}
 
-{{< callout type="info" >}}
+{{< hint info >}}
 **Observation**\
 Flood fill spreads only across quadrille cells having the same memory references, see [search()]({{< ref "search" >}}).
-{{< /callout >}}
+{{< /hint >}}
 
 # Syntax
 

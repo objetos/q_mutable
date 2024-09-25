@@ -89,10 +89,10 @@ function reset() {
 ```
 {{< /details >}}
 
-{{< callout type="info" >}}
+{{< hint info >}}
 **Observation**\
 To replace `value1` with `value2`, all cells containing `value1` must share the same memory reference, see [search()]({{< ref "search" >}}).
-{{< /callout >}}
+{{< /hint >}}
 
 # Syntax
 
