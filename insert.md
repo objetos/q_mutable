@@ -1,9 +1,8 @@
 ---
 weight: 5
 draft: false
+title: insert(row)
 ---
-
-# `insert()`
 
 Inserts an empty row into the quadrille.
 

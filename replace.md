@@ -1,9 +1,8 @@
 ---
 weight: 4
 draft: false
+title: replace()
 ---
-
-# `replace()`
 
 Either replaces non empty cells with `value`, or `value1` filled cells with `value2`.
 

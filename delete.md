@@ -1,9 +1,8 @@
 ---
 weight: 1
 draft: false
+title: delete(row)
 ---
-
-# `delete()`
 
 Deletes a row from the quadrille.
 

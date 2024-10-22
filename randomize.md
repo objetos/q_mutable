@@ -1,9 +1,8 @@
 ---
 weight: 7
 draft: false
+title: randomize()
 ---
-
-# `randomize()`
 
 Randomly re-arranges the quadrille cells.
 
