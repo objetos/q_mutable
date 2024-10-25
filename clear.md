@@ -6,7 +6,7 @@ title: clear()
 
 Clears quadrille cells (i.e., sets cells to `null`). Either all cells, a given cell, a given `row` or a set of identical cells using [flood fill](https://en.m.wikipedia.org/wiki/Flood_fill) or all cells.
 
-# Example
+## Example
 
 (click on any cell; press 'c' to clear all cells or 'r' to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="445" >}}
@@ -140,7 +140,7 @@ function reset() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `clear()`
 
@@ -154,7 +154,7 @@ function reset() {
 
 > `clear(row, col, border)`
 
-# Parameters
+## Parameters
 
 | parameter  | description                                                                                          |
 |------------|------------------------------------------------------------------------------------------------------|

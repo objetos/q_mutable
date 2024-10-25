@@ -6,7 +6,7 @@ title: insert(row)
 
 Inserts an empty row into the quadrille.
 
-# Example
+## Example
 
 (click any row; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
@@ -74,11 +74,11 @@ function reset() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `insert(row)`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                     |
 |-----------|---------------------------------------------------------------------------------|

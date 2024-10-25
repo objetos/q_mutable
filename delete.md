@@ -6,7 +6,7 @@ title: delete(row)
 
 Deletes a row from the quadrille.
 
-# Example
+## Example
 
 (click on any cell; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
@@ -70,11 +70,11 @@ function reset() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `delete(row)`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                               |
 |-----------|---------------------------------------------------------------------------|

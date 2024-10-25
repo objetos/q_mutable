@@ -93,13 +93,13 @@ function reset() {
 To replace `value1` with `value2`, all cells containing `value1` must share the same memory reference, see [search()]({{< ref "search" >}}).
 {{< /callout >}}
 
-# Syntax
+## Syntax
 
 > `replace(value)`
 
 > `replace(value1, value2)`
 
-# Parameters
+## Parameters
 
 | parameter | description                                                                                                                                                        |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

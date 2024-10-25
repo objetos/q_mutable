@@ -6,7 +6,7 @@ title: randomize()
 
 Randomly re-arranges the quadrille cells.
 
-# Example
+## Example
 
 (mouse click to randomize; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="537" height="537" >}}
@@ -66,6 +66,6 @@ function keyPressed() {
 ```
 {{< /details >}}
 
-# Syntax
+## Syntax
 
 > `randomize()`
