@@ -7,7 +7,7 @@ Clears a specific cell and all connected cells in the quadrille based on the spe
 
 ## Example
 
-(click on any cell to perform flood fill based on selected directions; press `r` to reset)\
+(click on any cell to perform flood fill based on selected directions; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="445" >}}
 `use strict`;
 Quadrille.cellLength = 20;
@@ -24,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
@@ -36,9 +36,7 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  if (key === 'r') {
-    reset();
-  }
+  reset();
 }
 
 function reset() {
@@ -63,7 +61,7 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
@@ -75,9 +73,7 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  if (key === 'r') {
-    reset();
-  }
+  reset();
 }
 
 function reset() {

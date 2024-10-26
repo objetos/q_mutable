@@ -7,7 +7,7 @@ Clears a specific cell in the quadrille, setting it to empty (i.e., `null`).
 
 ## Example
 
-(click on any cell to clear it; press `r` to reset)\
+(click on any cell to clear it; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 `use strict`;
 Quadrille.cellLength = 20;
@@ -19,7 +19,7 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
@@ -30,9 +30,7 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  if (key === 'r') {
-    reset();
-  }
+  reset();
 }
 
 function reset() {
@@ -52,7 +50,7 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
@@ -63,9 +61,7 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  if (key === 'r') {
-    reset();
-  }
+  reset();
 }
 
 function reset() {

@@ -3,68 +3,64 @@ weight: 1
 title: fill()
 ---
 
-Fills all cells in the quadrille with a chessboard pattern by default (when no `value` is provided).
+Fills all cells in the quadrille with a chessboard pattern.
 
 ## Example
 
-(press `f` to fill all empty cells with the default pattern or `r` to reset)\
-{{< p5-global-iframe quadrille="true" width="425" height="445" >}}
+(click or press any key to toggle between filling and clearing the quadrille)\
+{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 `use strict`;
 Quadrille.cellLength = 20;
-let quadrille, board;
+let board = true;
+let quadrille;
 
 function setup() {
   createCanvas(400, 400);
-  board = createQuadrille(20, 20).fill();  // create a chessboard pattern
-  reset();
+  quadrille = createQuadrille(20, 20);
+  quadrille.fill();  // create a chessboard pattern
 }
 
 function draw() {
-  background('orange');
-  drawQuadrille(board, { tileDisplay: 0 });
+  background('black');
+  drawQuadrille(quadrille, { tileDisplay: board ? 0 : Quadrille.tileDisplay });
+}
+
+function mouseClicked() {
+  board = !board;
+  board ? quadrille.fill() : quadrille.clear();
 }
 
 function keyPressed() {
-  if (key === 'f') {
-    quadrille.fill();
-  }
-  if (key === 'r') {
-    reset();
-  }
-}
-
-function reset() {
-  quadrille = createQuadrille(20, 20);
+  board = !board;
+  board ? quadrille.fill() : quadrille.clear();
 }
 {{< /p5-global-iframe >}}
 
 {{< details title="code" open=false >}}
 ```js
 Quadrille.cellLength = 20;
-let quadrille, board;
+let board = true;
+let quadrille;
 
 function setup() {
   createCanvas(400, 400);
-  board = createQuadrille(20, 20).fill();  // create a chessboard pattern
-  reset();
+  quadrille = createQuadrille(20, 20);
+  quadrille.fill();  // create a chessboard pattern
 }
 
 function draw() {
   background('orange');
-  drawQuadrille(board, { tileDisplay: 0 });
+  drawQuadrille(quadrille, { tileDisplay: board ? 0 : Quadrille.tileDisplay });
+}
+
+function mouseClicked() {
+  board = !board;
+  board ? quadrille.fill() : quadrille.clear();
 }
 
 function keyPressed() {
-  if (key === 'f') {
-    quadrille.fill();
-  }
-  if (key === 'r') {
-    reset();
-  }
-}
-
-function reset() {
-  quadrille = createQuadrille(20, 20);
+  board = !board;
+  board ? quadrille.fill() : quadrille.clear();
 }
 ```
 {{< /details >}}

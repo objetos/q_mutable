@@ -1,74 +1,82 @@
 ---
-weight: 1
-title: clear()
+weight: 1  
+title: clear()  
 ---
 
 Clears all cells in the quadrille, setting each cell to empty (i.e., `null`).
 
 ## Example
 
-(press `c` to clear all cells or `r` to reset)\
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
-`use strict`;
-Quadrille.cellLength = 20;
-let quadrille;
+(click or press any key to toggle between clearing all cells and resetting to random colors)\
+{{< p5-global-iframe quadrille="true" width="425" height="425" >}}  
+`use strict`;  
+Quadrille.cellLength = 20;  
+let quadrille;  
+let cleared = false;  
 
-function setup() {
-  createCanvas(400, 400);
-  reset();
+function setup() {  
+  createCanvas(400, 400);  
+  reset();  
+}  
+
+function draw() {  
+  background(0);  
+  drawQuadrille(quadrille);  
+}  
+
+function mouseClicked() {  
+  cleared = !cleared;
+  cleared ? quadrille.clear() : reset();
 }
 
-function draw() {
-  background('orange');
-  drawQuadrille(quadrille);
+function keyPressed() {  
+  cleared = !cleared;
+  cleared ? quadrille.clear() : reset();
+}  
+
+function reset() {  
+  quadrille = createQuadrille(20, 20, 100, color('red'));  
+  quadrille.rand(100, color('green')).rand(100, color('blue')).rand(100, color('cyan'));  
+}  
+{{< /p5-global-iframe >}}  
+
+{{< details title="code" open=false >}}  
+```js  
+Quadrille.cellLength = 20;  
+let quadrille;  
+let cleared = false;  
+
+function setup() {  
+  createCanvas(400, 400);  
+  reset();  
+}  
+
+function draw() {  
+  background(0);  
+  drawQuadrille(quadrille);  
+}  
+
+function mouseClicked() {  
+  cleared = !cleared;
+  cleared ? quadrille.clear() : reset();
+}  
+
+function keyPressed() {  
+  cleared = !cleared;
+  cleared ? quadrille.clear() : reset();
 }
 
-function keyPressed() {
-  if (key === 'c') {
-    quadrille.clear();
-  }
-  if (key === 'r') {
-    reset();
-  }
-}
+function reset() {  
+  quadrille = createQuadrille(20, 20, 100, color('red'));  
+  quadrille.rand(100, color('green')).rand(100, color('blue')).rand(100, color('cyan'));  
+}  
+```  
+{{< /details >}}  
 
-function reset() {
-  quadrille = createQuadrille(20, 20, 100, color('red'));
-  quadrille.rand(100, color('green')).rand(100, color('blue')).rand(100, color('cyan'));
-}
-{{< /p5-global-iframe >}}
+{{< callout type="info" >}}  
+**Observation:** Empty cells appear black because the background is set to black (`background(0)`).  
+{{< /callout >}}  
 
-{{< details title="code" open=false >}}
-```js
-Quadrille.cellLength = 20;
-let quadrille;
-
-function setup() {
-  createCanvas(400, 400);
-  reset();
-}
-
-function draw() {
-  background('orange');
-  drawQuadrille(quadrille);
-}
-
-function keyPressed() {
-  if (key === 'c') {
-    quadrille.clear();
-  }
-  if (key === 'r') {
-    reset();
-  }
-}
-
-function reset() {
-  quadrille = createQuadrille(20, 20, 100, color('red'));
-  quadrille.rand(100, color('green')).rand(100, color('blue')).rand(100, color('cyan'));
-}
-```
-{{< /details >}}
-
-## Syntax
+## Syntax  
 
 > `clear()`
