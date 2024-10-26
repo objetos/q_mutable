@@ -25,7 +25,7 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
@@ -64,7 +64,7 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
