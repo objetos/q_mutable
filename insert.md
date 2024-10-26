@@ -20,14 +20,12 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
 function mouseClicked() {
-  if (quadrille.height < 20) {
-    quadrille.insert(quadrille.mouseRow);
-  }
+  quadrille.insert(quadrille.mouseRow);
 }
 
 function keyPressed() {
@@ -36,8 +34,7 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 10, 50, color('red'));
-  quadrille.rand(50, color('green')).rand(50, color('blue')).
-            rand(50, color('cyan'));
+  quadrille.rand(50, color('lime')).rand(50, color('blue'));
 }
 {{< /p5-global-iframe >}}
 
@@ -52,14 +49,12 @@ function setup() {
 }
 
 function draw() {
-  background('orange');
+  background('black');
   drawQuadrille(quadrille);
 }
 
 function mouseClicked() {
-  if (quadrille.height < 20) {
-    quadrille.insert(quadrille.mouseRow);
-  }
+  quadrille.insert(quadrille.mouseRow);
 }
 
 function keyPressed() {
@@ -68,8 +63,7 @@ function keyPressed() {
 
 function reset() {
   quadrille = createQuadrille(20, 10, 50, color('red'));
-  quadrille.rand(50, color('green')).rand(50, color('blue')).
-            rand(50, color('cyan'));
+  quadrille.rand(50, color('lime')).rand(50, color('blue'));
 }
 ```
 {{< /details >}}
