@@ -1,7 +1,7 @@
 ---
+bookCollapseSection: true
+title: "rand(args)"
 weight: 6
-draft: false
-title: rand()
 ---
 
 Use `value` to randomly fill (or clear if `value` is `null`) cells the specified number of `times`.
