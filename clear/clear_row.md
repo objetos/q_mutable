@@ -9,7 +9,7 @@ Clears an entire row in the quadrille, setting each cell in the row to empty (i.
 
 (click on a row to clear it; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 20;
 let quadrille;
 

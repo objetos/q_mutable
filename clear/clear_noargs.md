@@ -9,7 +9,7 @@ Clears all cells in the quadrille, setting each cell to empty (i.e., `null`).
 
 (click or press any key to toggle between clearing all cells and resetting to random colors)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}  
-`use strict`;  
+'use strict';  
 Quadrille.cellLength = 20;  
 let quadrille;  
 let cleared = false;  

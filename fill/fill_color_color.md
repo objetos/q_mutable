@@ -9,7 +9,7 @@ Fills all cells in the quadrille with a chessboard pattern.
 
 (click or press any key to toggle between filling and clearing the quadrille)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 20;
 let board = true;
 let quadrille;

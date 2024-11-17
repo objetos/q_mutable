@@ -9,7 +9,7 @@ Randomly clears `times` number of cells in the quadrille. Same as [random(times,
 
 (numeric keys define `times`; mouse click randomly clears `times` number of cells)\
 {{< p5-global-iframe quadrille="true" width="385" height="415" >}}  
-`use strict`;
+'use strict';
 Quadrille.cellLength = 30;  
 let times = 5;  
 let quadrille;  

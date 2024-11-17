@@ -9,7 +9,7 @@ Replaces all cells containing `value1` with `value2` in the quadrille.
 
 (click on any cell to replace all cells with the same value with a 🙈; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}  
-`use strict`;  
+'use strict';  
 Quadrille.cellLength = 40;
 let quadrille;  
 let red, lime, blue, cyan;

@@ -10,7 +10,7 @@ Randomly re-arranges the quadrille cells.
 
 (mouse click to randomize; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="537" height="537" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 32;
 let mandrill;
 let quadrille;

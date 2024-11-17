@@ -9,7 +9,7 @@ Randomly fills the quadrille with the specified `value` a given number of `times
 
 (numeric keys define `times`; other keys define `value`)\
 {{< p5-global-iframe quadrille="true" width="385" height="415" >}}  
-`use strict`;  
+'use strict';  
 Quadrille.cellLength = 30;
 let times = 5;
 let value, values;

@@ -9,7 +9,7 @@ Clears a specific cell and all connected cells in the quadrille based on the spe
 
 (click on any cell to perform flood fill based on selected options; press any key to reset)\
 {{< p5-global-iframe quadrille="true" width="425" height="445" >}}
-`use strict`;
+'use strict';
 Quadrille.cellLength = 20;
 let quadrille;
 let mode;

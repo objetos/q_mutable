@@ -9,7 +9,7 @@ Replaces all non-empty cells in the quadrille with the specified `value`.
 
 (click or press any key to toggle between replacing cells and resetting)\
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}  
-`use strict`;  
+'use strict';  
 Quadrille.cellLength = 40;
 let quadrille;
 let replaced = false;

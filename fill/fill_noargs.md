@@ -1,66 +1,65 @@
 ---
-weight: 1
-title: fill()
+weight: 1  
+title: fill()  
 ---
 
 Fills all cells in the quadrille with a chessboard pattern.
 
 ## Example
 
-(click or press any key to toggle between filling and clearing the quadrille)\
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
-`use strict`;
+{{< p5-global-iframe quadrille="true" width="665" height="340" >}}
+'use strict';
+// Set the cell size (default is 100, changed to 20 here)
 Quadrille.cellLength = 20;
-let board = true;
-let quadrille;
+// Disable the tile display algorithm
+Quadrille.tileDisplay = 0;
+let q1, q2;
 
 function setup() {
-  createCanvas(400, 400);
-  quadrille = createQuadrille(20, 20);
-  quadrille.fill();  // create a chessboard pattern
+  createCanvas(34 * Quadrille.cellLength, 16 * Quadrille.cellLength);
+  // Create and fill the first quadrille
+  q1 = createQuadrille(16, 16);
+  q1.fill();
+  // Set global colors for the chessboard pattern
+  Quadrille.lightSquare = '#EBECCF'; // Light square color (chess.com)
+  Quadrille.darkSquare = '#769555';  // Dark square color (chess.com)
+  // Create and fill the second quadrille using method chaining
+  q2 = createQuadrille(16, 16).fill();
 }
 
 function draw() {
-  background('black');
-  drawQuadrille(quadrille, { tileDisplay: board ? 0 : Quadrille.tileDisplay });
-}
-
-function mouseClicked() {
-  board = !board;
-  board ? quadrille.fill() : quadrille.clear();
-}
-
-function keyPressed() {
-  board = !board;
-  board ? quadrille.fill() : quadrille.clear();
+  // Draw the first quadrille
+  drawQuadrille(q1);
+  // Draw the second quadrille with an x-offset of 330 pixels
+  drawQuadrille(q2, { x: 330 });
 }
 {{< /p5-global-iframe >}}
 
 {{< details title="code" open=false >}}
 ```js
+// Set the cell size (default is 100, changed to 20 here)
 Quadrille.cellLength = 20;
-let board = true;
-let quadrille;
+// Disable the tile display algorithm
+Quadrille.tileDisplay = 0;
+let q1, q2;
 
 function setup() {
-  createCanvas(400, 400);
-  quadrille = createQuadrille(20, 20);
-  quadrille.fill();  // create a chessboard pattern
+  createCanvas(34 * Quadrille.cellLength, 16 * Quadrille.cellLength);
+  // Create and fill the first quadrille
+  q1 = createQuadrille(16, 16);
+  q1.fill();
+  // Set global colors for the chessboard pattern
+  Quadrille.lightSquare = '#EBECCF'; // Light square color (chess.com)
+  Quadrille.darkSquare = '#769555';  // Dark square color (chess.com)
+  // Create and fill the second quadrille using method chaining
+  q2 = createQuadrille(16, 16).fill();
 }
 
 function draw() {
-  background('orange');
-  drawQuadrille(quadrille, { tileDisplay: board ? 0 : Quadrille.tileDisplay });
-}
-
-function mouseClicked() {
-  board = !board;
-  board ? quadrille.fill() : quadrille.clear();
-}
-
-function keyPressed() {
-  board = !board;
-  board ? quadrille.fill() : quadrille.clear();
+  // Draw the first quadrille
+  drawQuadrille(q1);
+  // Draw the second quadrille with an x-offset of 330 pixels
+  drawQuadrille(q2, { x: 330 });
 }
 ```
 {{< /details >}}
@@ -68,3 +67,10 @@ function keyPressed() {
 ## Syntax
 
 > `fill()`
+
+## Parameters
+
+| Param                 | Description                                                                                             |
+|-----------------------|---------------------------------------------------------------------------------------------------------|
+| Quadrille.lightSquare | String \| [p5.Color](https://p5js.org/reference/#/p5.Color): Global color for the light squares. Accepts an HTML color string (e.g., `'red'`, `'#ff0000'`, `'rgb(255,0,0)'`) or a `p5.Color` instance. Default is `#FDCDAA` |
+| Quadrille.darkSquare  | String \| [p5.Color](https://p5js.org/reference/#/p5.Color): Global color for the dark squares. Accepts an HTML color string or a `p5.Color` instance. Default is `#D28C45` |
