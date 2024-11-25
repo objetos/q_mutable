@@ -1,10 +1,9 @@
 ---
 bookCollapseSection: true
 weight: 5
+title: Mutators
 draft: false
 ---
-
-# Mutators
 
 Mutator methods directly modify the state of the `quadrille` they are called upon. These transformations are persistent and affect the `quadrille` instance in-place.
 
