@@ -1,6 +1,6 @@
 ---
 weight: 1
-title: rand(times, value)  
+title: rand(times, value)
 ---
 
 Randomly fills the quadrille with the specified `value` a given number of `times`.

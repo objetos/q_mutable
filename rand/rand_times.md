@@ -1,6 +1,6 @@
 ---
 weight: 2
-title: rand(times)  
+title: rand(times)
 ---
 
 Randomly clears `times` number of cells in the quadrille. Same as [random(times, null)]({{< ref "rand_times_value" >}}).
