@@ -3,7 +3,7 @@ weight: 1
 title: swap(row1, col1, row2, col2)
 ---
 
-Swaps the contents of `row1` and `row2` in the `quadrille`.
+Swaps the contents of the cell at `(row1, col1)` with the cell at `(row2, col2)` in the `quadrille`.
 
 ## Example
 
@@ -26,19 +26,16 @@ function setup() {
   quadrille = createQuadrille(5, 5);
   visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
   hint = createQuadrille(1, 1);
-
   // Create row and column select elements for the first cell
   rowSelect1 = createSelect();
   rowSelect1.position(10, height + 10);
   colSelect1 = createSelect();
   colSelect1.position(60, height + 10);
-
   // Create row and column select elements for the second cell
   rowSelect2 = createSelect();
   rowSelect2.position(120, height + 10);
   colSelect2 = createSelect();
   colSelect2.position(170, height + 10);
-
   // Populate the selects with options
   for (let i = 0; i < quadrille.height; i++) {
     rowSelect1.option(i);
@@ -48,11 +45,9 @@ function setup() {
     colSelect1.option(i);
     colSelect2.option(i);
   }
-
   // Pre-select last row and column for the second cell
   rowSelect2.selected(quadrille.height - 1);
   colSelect2.selected(quadrille.width - 1);
-
   // Create a button to swap the cells
   swapButton = createButton('Swap Cells');
   swapButton.position(230, height + 10);
@@ -61,7 +56,8 @@ function setup() {
     const col1 = int(colSelect1.value());
     const row2 = int(rowSelect2.value());
     const col2 = int(colSelect2.value());
-    quadrille.swap(row1, col1, row2, col2); // Swap the selected cells
+    // Swap the selected cells
+    quadrille.swap(row1, col1, row2, col2);
   });
 }
 
@@ -99,19 +95,16 @@ function setup() {
   quadrille = createQuadrille(5, 5);
   visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
   hint = createQuadrille(1, 1);
-
   // Create row and column select elements for the first cell
   rowSelect1 = createSelect();
   rowSelect1.position(10, height + 10);
   colSelect1 = createSelect();
   colSelect1.position(60, height + 10);
-
   // Create row and column select elements for the second cell
   rowSelect2 = createSelect();
   rowSelect2.position(120, height + 10);
   colSelect2 = createSelect();
   colSelect2.position(170, height + 10);
-
   // Populate the selects with options
   for (let i = 0; i < quadrille.height; i++) {
     rowSelect1.option(i);
@@ -121,11 +114,9 @@ function setup() {
     colSelect1.option(i);
     colSelect2.option(i);
   }
-
   // Pre-select last row and column for the second cell
   rowSelect2.selected(quadrille.height - 1);
   colSelect2.selected(quadrille.width - 1);
-
   // Create a button to swap the cells
   swapButton = createButton('Swap Cells');
   swapButton.position(230, height + 10);
@@ -134,7 +125,8 @@ function setup() {
     const col1 = int(colSelect1.value());
     const row2 = int(rowSelect2.value());
     const col2 = int(colSelect2.value());
-    quadrille.swap(row1, col1, row2, col2); // Swap the selected cells
+    // Swap the selected cells
+    quadrille.swap(row1, col1, row2, col2);
   });
 }
 
@@ -157,11 +149,13 @@ function keyPressed() {
 
 ## Syntax
 
-> `swap(row1, row2)`
+> `swap(row1, col1, row2, col2)`
 
 ## Parameters
 
-| Parameter | Description                              |
-|-----------|------------------------------------------|
-| row1      | Number: Index of the first row to swap   |
-| row2      | Number: Index of the second row to swap  |
+| Parameter | Description                            |
+|-----------|----------------------------------------|
+| row1      | Number: Row index of the first cell    |
+| col1      | Number: Column index of the first cell |
+| row2      | Number: Row index of the second cell   |
+| col2      | Number: Column index of the second cell|
