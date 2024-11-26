@@ -7,12 +7,14 @@ Swaps the contents of `row1` and `row2` in the `quadrille`.
 
 ## Example
 
-(click canvas and press any key to randomize `quadrille`)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js@2.2.0/p5.quadrille.js" width="525" height="540" >}}
-'use strict'
+(click to select rows, press `s` to swap, or `r` to randomize)\
+{{< p5-global-iframe quadrille="true" width="525" height="525" >}}
+'use strict';
+
 let quadrille, hint;
 let images = [];
-let rowSelect1, rowSelect2, swapButton;
+let row1 = 0, row2 = 4; // Default active rows
+let activeRow = 1; // Indicates which row (1 or 2) is updated on a click
 
 function preload() {
   for (let i = 1; i <= 25; i++) {
@@ -25,37 +27,34 @@ function setup() {
   // Initialize the quadrille
   quadrille = createQuadrille(5, 5);
   visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
-  hint = createQuadrille(5, 1);
-  // Create row select elements
-  rowSelect1 = createSelect();
-  rowSelect1.position(10, height + 10);
-  rowSelect2 = createSelect();
-  rowSelect2.position(60, height + 10);
-  // Populate the selects with row options
-  for (let i = 0; i < quadrille.height; i++) {
-    rowSelect1.option(i);
-    rowSelect2.option(i);
-  }
-  rowSelect2.selected(quadrille.height - 1);
-  // Create a button to swap the rows
-  swapButton = createButton('Swap Rows');
-  swapButton.position(110, height + 10);
-  swapButton.mousePressed(() => {
-    const row1 = int(rowSelect1.value());
-    const row2 = int(rowSelect2.value());
-    quadrille.swap(row1, row2); // Swap the selected rows
-  });
+  hint = createQuadrille(5, 1); // For drawing row hints
 }
 
 function draw() {
   background('DeepSkyBlue');
-  drawQuadrille(quadrille, { outline: 'magenta' });
-  drawQuadrille(hint, { outline: 'lime', row: int(rowSelect1.value()) });
-  drawQuadrille(hint, { outline: 'lime', row: int(rowSelect2.value()) });
+  // Draw the quadrille
+  drawQuadrille(quadrille, { outlineWeight: 1 });
+  // Draw hints for the selected rows
+  drawQuadrille(hint, { outline: 'magenta', row: row1 });
+  drawQuadrille(hint, { outline: 'cyan', row: row2 });
+}
+
+function mousePressed() {
+  const row = quadrille.mouseRow;
+  if (row >= 0 && row < quadrille.height) {
+    // Update the active row
+    activeRow === 1 ? (row1 = row) : (row2 = row);
+    activeRow = activeRow === 1 ? 2 : 1; // Alternate active row
+  }
 }
 
 function keyPressed() {
-  quadrille.randomize();
+  if (key === 's') {
+    quadrille.swap(row1, row2); // Swap the selected rows
+  }
+  if (key === 'r') {
+    quadrille.randomize();
+  }
 }
 {{< /p5-global-iframe >}}
 
@@ -63,7 +62,8 @@ function keyPressed() {
 ```js
 let quadrille, hint;
 let images = [];
-let rowSelect1, rowSelect2, swapButton;
+let row1 = 0, row2 = 4; // Default active rows
+let activeRow = 1; // Indicates which row (1 or 2) is updated on a click
 
 function preload() {
   for (let i = 1; i <= 25; i++) {
@@ -76,37 +76,34 @@ function setup() {
   // Initialize the quadrille
   quadrille = createQuadrille(5, 5);
   visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
-  hint = createQuadrille(5, 1);
-  // Create row select elements
-  rowSelect1 = createSelect();
-  rowSelect1.position(10, height + 10);
-  rowSelect2 = createSelect();
-  rowSelect2.position(60, height + 10);
-  // Populate the selects with row options
-  for (let i = 0; i < quadrille.height; i++) {
-    rowSelect1.option(i);
-    rowSelect2.option(i);
-  }
-  rowSelect2.selected(quadrille.height - 1);
-  // Create a button to swap the rows
-  swapButton = createButton('Swap Rows');
-  swapButton.position(110, height + 10);
-  swapButton.mousePressed(() => {
-    const row1 = int(rowSelect1.value());
-    const row2 = int(rowSelect2.value());
-    quadrille.swap(row1, row2); // Swap the selected rows
-  });
+  hint = createQuadrille(5, 1); // For drawing row hints
 }
 
 function draw() {
   background('DeepSkyBlue');
-  drawQuadrille(quadrille, { outline: 'magenta' });
-  drawQuadrille(hint, { outline: 'lime', row: int(rowSelect1.value()) });
-  drawQuadrille(hint, { outline: 'lime', row: int(rowSelect2.value()) });
+  // Draw the quadrille
+  drawQuadrille(quadrille, { outlineWeight: 1 });
+  // Draw hints for the selected rows
+  drawQuadrille(hint, { outline: 'magenta', row: row1 });
+  drawQuadrille(hint, { outline: 'cyan', row: row2 });
+}
+
+function mousePressed() {
+  const row = quadrille.mouseRow;
+  if (row >= 0 && row < quadrille.height) {
+    // Update the active row
+    activeRow === 1 ? (row1 = row) : (row2 = row);
+    activeRow = activeRow === 1 ? 2 : 1; // Alternate active row
+  }
 }
 
 function keyPressed() {
-  quadrille.randomize();
+  if (key === 's') {
+    quadrille.swap(row1, row2); // Swap the selected rows
+  }
+  if (key === 'r') {
+    quadrille.randomize();
+  }
 }
 ```
 {{< /details >}}

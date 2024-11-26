@@ -7,12 +7,14 @@ Swaps the contents of the cell at `(row1, col1)` with the cell at `(row2, col2)`
 
 ## Example
 
-(click canvas and press any key to randomize `quadrille`)\
-{{< p5-global-iframe lib1="https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js@2.2.0/p5.quadrille.js" width="525" height="540" >}}
+(click to select cells, press `s` to swap, or `r` to randomize)\
+{{< p5-global-iframe quadrille="true" width="525" height="525" >}}
 'use strict'
+
 let quadrille, hint;
 let images = [];
-let rowSelect1, colSelect1, rowSelect2, colSelect2, swapButton;
+let cell1 = [0, 0], cell2 = [4, 4]; // Start with two active cells
+let activeCell = 1; // Indicates which cell (1 or 2) moves on a click
 
 function preload() {
   for (let i = 1; i <= 25; i++) {
@@ -26,54 +28,36 @@ function setup() {
   quadrille = createQuadrille(5, 5);
   visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
   hint = createQuadrille(1, 1);
-  // Create row and column select elements for the first cell
-  rowSelect1 = createSelect();
-  rowSelect1.position(10, height + 10);
-  colSelect1 = createSelect();
-  colSelect1.position(60, height + 10);
-  // Create row and column select elements for the second cell
-  rowSelect2 = createSelect();
-  rowSelect2.position(120, height + 10);
-  colSelect2 = createSelect();
-  colSelect2.position(170, height + 10);
-  // Populate the selects with options
-  for (let i = 0; i < quadrille.height; i++) {
-    rowSelect1.option(i);
-    rowSelect2.option(i);
-  }
-  for (let i = 0; i < quadrille.width; i++) {
-    colSelect1.option(i);
-    colSelect2.option(i);
-  }
-  // Pre-select last row and column for the second cell
-  rowSelect2.selected(quadrille.height - 1);
-  colSelect2.selected(quadrille.width - 1);
-  // Create a button to swap the cells
-  swapButton = createButton('Swap Cells');
-  swapButton.position(230, height + 10);
-  swapButton.mousePressed(() => {
-    const row1 = int(rowSelect1.value());
-    const col1 = int(colSelect1.value());
-    const row2 = int(rowSelect2.value());
-    const col2 = int(colSelect2.value());
-    // Swap the selected cells
-    quadrille.swap(row1, col1, row2, col2);
-  });
 }
 
 function draw() {
   background('DeepSkyBlue');
-  drawQuadrille(quadrille, { outline: 'magenta' });
-  drawQuadrille(hint, { outline: 'lime',
-                        row: int(rowSelect1.value()),
-                        col: int(colSelect1.value()) });
-  drawQuadrille(hint, { outline: 'lime',
-                        row: int(rowSelect2.value()),
-                        col: int(colSelect2.value()) });
+  // Draw the quadrille
+  drawQuadrille(quadrille, { outlineWeight: 1 });
+  // Draw hints
+  drawQuadrille(hint, { outline: 'magenta', row: cell1[0], col: cell1[1] });
+  drawQuadrille(hint, { outline: 'cyan', row: cell2[0], col: cell2[1] });
+}
+
+function mousePressed() {
+  const row = quadrille.mouseRow;
+  const col = quadrille.mouseCol;
+  if (row >= 0 && row < quadrille.height && col >= 0 && col < quadrille.width) {
+    // Update active cell
+    activeCell === 1 ? (cell1 = [row, col]) : (cell2 = [row, col]);
+    activeCell = activeCell === 1 ? 2 : 1; // Alternate active cell
+  }
 }
 
 function keyPressed() {
-  quadrille.randomize();
+  if (key === 's') {
+    const [row1, col1] = cell1;
+    const [row2, col2] = cell2;
+    quadrille.swap(row1, col1, row2, col2);
+  }
+  if (key === 'r') {
+    quadrille.randomize();
+  }
 }
 {{< /p5-global-iframe >}}
 
@@ -81,7 +65,8 @@ function keyPressed() {
 ```js
 let quadrille, hint;
 let images = [];
-let rowSelect1, colSelect1, rowSelect2, colSelect2, swapButton;
+let cell1 = [0, 0], cell2 = [4, 4]; // Start with two active cells
+let activeCell = 1; // Indicates which cell (1 or 2) moves on a click
 
 function preload() {
   for (let i = 1; i <= 25; i++) {
@@ -95,54 +80,36 @@ function setup() {
   quadrille = createQuadrille(5, 5);
   visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
   hint = createQuadrille(1, 1);
-  // Create row and column select elements for the first cell
-  rowSelect1 = createSelect();
-  rowSelect1.position(10, height + 10);
-  colSelect1 = createSelect();
-  colSelect1.position(60, height + 10);
-  // Create row and column select elements for the second cell
-  rowSelect2 = createSelect();
-  rowSelect2.position(120, height + 10);
-  colSelect2 = createSelect();
-  colSelect2.position(170, height + 10);
-  // Populate the selects with options
-  for (let i = 0; i < quadrille.height; i++) {
-    rowSelect1.option(i);
-    rowSelect2.option(i);
-  }
-  for (let i = 0; i < quadrille.width; i++) {
-    colSelect1.option(i);
-    colSelect2.option(i);
-  }
-  // Pre-select last row and column for the second cell
-  rowSelect2.selected(quadrille.height - 1);
-  colSelect2.selected(quadrille.width - 1);
-  // Create a button to swap the cells
-  swapButton = createButton('Swap Cells');
-  swapButton.position(230, height + 10);
-  swapButton.mousePressed(() => {
-    const row1 = int(rowSelect1.value());
-    const col1 = int(colSelect1.value());
-    const row2 = int(rowSelect2.value());
-    const col2 = int(colSelect2.value());
-    // Swap the selected cells
-    quadrille.swap(row1, col1, row2, col2);
-  });
 }
 
 function draw() {
   background('DeepSkyBlue');
-  drawQuadrille(quadrille, { outline: 'magenta' });
-  drawQuadrille(hint, { outline: 'lime',
-                        row: int(rowSelect1.value()),
-                        col: int(colSelect1.value()) });
-  drawQuadrille(hint, { outline: 'lime',
-                        row: int(rowSelect2.value()),
-                        col: int(colSelect2.value()) });
+  // Draw the quadrille
+  drawQuadrille(quadrille, { outlineWeight: 1 });
+  // Draw hints
+  drawQuadrille(hint, { outline: 'magenta', row: cell1[0], col: cell1[1] });
+  drawQuadrille(hint, { outline: 'cyan', row: cell2[0], col: cell2[1] });
+}
+
+function mousePressed() {
+  const row = quadrille.mouseRow;
+  const col = quadrille.mouseCol;
+  if (row >= 0 && row < quadrille.height && col >= 0 && col < quadrille.width) {
+    // Update active cell
+    activeCell === 1 ? (cell1 = [row, col]) : (cell2 = [row, col]);
+    activeCell = activeCell === 1 ? 2 : 1; // Alternate active cell
+  }
 }
 
 function keyPressed() {
-  quadrille.randomize();
+  if (key === 's') {
+    const [row1, col1] = cell1;
+    const [row2, col2] = cell2;
+    quadrille.swap(row1, col1, row2, col2);
+  }
+  if (key === 'r') {
+    quadrille.randomize();
+  }
 }
 ```
 {{< /details >}}
