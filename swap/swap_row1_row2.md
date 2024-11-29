@@ -24,9 +24,8 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
-  // Initialize the quadrille
-  quadrille = createQuadrille(5, 5);
-  visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
+  // Create the quadrilles
+  quadrille = createQuadrille(5, images);
   hint = createQuadrille(5, 1); // For drawing row hints
 }
 
@@ -73,9 +72,8 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
-  // Initialize the quadrille
-  quadrille = createQuadrille(5, 5);
-  visitQuadrille(quadrille, (r, c) => quadrille.fill(r, c, images[r * 5 + c]));
+  // Create the quadrilles
+  quadrille = createQuadrille(5, images);
   hint = createQuadrille(5, 1); // For drawing row hints
 }
 
