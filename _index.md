@@ -23,7 +23,7 @@ quadrille.randomize();
 ```  
 {{< /callout >}}  
 
-## Overview of Mutator Methods  
+## Method Overview
 
 - **[delete(row)]({{< ref "delete" >}}):** Deletes the specified `row` from the `quadrille`.  
 - **[insert(row)]({{< ref "insert" >}}):** Inserts an empty `row` into the `quadrille` at the specified position.    
