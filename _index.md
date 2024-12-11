@@ -28,6 +28,7 @@ quadrille.randomize();
 - **[delete(row)]({{< ref "delete" >}}):** Deletes the specified `row` from the `quadrille`.  
 - **[insert(row)]({{< ref "insert" >}}):** Inserts an empty `row` into the `quadrille` at the specified position.    
 - **[randomize()]({{< ref "randomize" >}}):** Randomizes the current content of the `quadrille`, shuffling cell values.
+- **[rand(args)]({{< ref "rand" >}}):** Randomly populates or empties a specified number of cells in the quadrille.
 - **[swap(args)]({{< ref "swap" >}}):** Swaps content between two specified cells or rows as defined by `args`.  
 - **[replace(args)]({{< ref "replace" >}}):** Replaces cell values in the `quadrille`, either targeting non-empty cells or swapping one value for another.  
 - **[clear(args)]({{< ref "clear" >}}):** Clears content from the entire `quadrille` or specific cells, depending on `args`.  
