@@ -72,5 +72,5 @@ function draw() {
 
 | Param                 | Description                                                                                             |
 |-----------------------|---------------------------------------------------------------------------------------------------------|
-| Quadrille.lightSquare | String \| [p5.Color](https://p5js.org/reference/#/p5.Color): Global color for the light squares. Accepts an HTML color string (e.g., `'red'`, `'#ff0000'`, `'rgb(255,0,0)'`) or a `p5.Color` instance. Default is `#FDCDAA` |
-| Quadrille.darkSquare  | String \| [p5.Color](https://p5js.org/reference/#/p5.Color): Global color for the dark squares. Accepts an HTML color string or a `p5.Color` instance. Default is `#D28C45` |
+| `Quadrille.lightSquare` | String \| [p5.Color](https://p5js.org/reference/#/p5.Color): Global color for the light squares. Accepts an HTML color string (e.g., `'red'`, `'#ff0000'`, `'rgb(255,0,0)'`) or a `p5.Color` instance. Default is `#FDCDAA` |
+| `Quadrille.darkSquare`  | String \| [p5.Color](https://p5js.org/reference/#/p5.Color): Global color for the dark squares. Accepts an HTML color string or a `p5.Color` instance. Default is `#D28C45` |

@@ -118,9 +118,9 @@ function keyPressed() {
 
 ## Parameters
 
-| Parameter | Description                            |
+| Param     | Description                            |
 |-----------|----------------------------------------|
-| row1      | Number: Row index of the first cell    |
-| col1      | Number: Column index of the first cell |
-| row2      | Number: Row index of the second cell   |
-| col2      | Number: Column index of the second cell|
+| `row1`    | Number: Row index of the first cell    |
+| `col1`    | Number: Column index of the first cell |
+| `row2`    | Number: Row index of the second cell   |
+| `col2`    | Number: Column index of the second cell|

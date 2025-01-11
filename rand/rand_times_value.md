@@ -87,7 +87,7 @@ function keyPressed() {
 
 ## Parameters  
 
-| parameter | description                                                                                                                |  
+| Param     | Description                                                                                                                |  
 |-----------|----------------------------------------------------------------------------------------------------------------------------|  
-| times     | Number: number of cells to fill randomly                                             |  
-| value     | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number \| `null`: clears cells |
+| `times`   | Number: number of cells to fill randomly                                             |  
+| `value`   | Any: A valid JavaScript value                                                        |

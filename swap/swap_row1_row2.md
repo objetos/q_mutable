@@ -112,7 +112,7 @@ function keyPressed() {
 
 ## Parameters
 
-| Parameter | Description                              |
+| Param     | Description                              |
 |-----------|------------------------------------------|
-| row1      | Number: Index of the first row to swap   |
-| row2      | Number: Index of the second row to swap  |
+| `row1`    | Number: Index of the first row to swap   |
+| `row2`    | Number: Index of the second row to swap  |

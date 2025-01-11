@@ -77,8 +77,8 @@ function reset() {
 
 ## Parameters  
 
-| parameter | description                                                                          |  
+| Param     | Description                                                                          |  
 |-----------|--------------------------------------------------------------------------------------|  
-| row       | Number: row number of the cell to fill [\[0..height\]]({{< ref "height" >}})         |  
-| col       | Number: column number of the cell to fill [\[0..width\]]({{< ref "width" >}})        |  
-| value     | Any: the value to fill the specified cell with, such as color, image, string, etc.   |  
+| `row`     | Number: row number of the cell to fill [\[0..height\]]({{< ref "height" >}})         |  
+| `col`     | Number: column number of the cell to fill [\[0..width\]]({{< ref "width" >}})        |  
+| `value`   | Any: A valid JavaScript value                                                        |  

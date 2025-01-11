@@ -89,9 +89,9 @@ function reset() {
 
 ## Parameters  
 
-| parameter | description                                                                                 |  
-|-----------|---------------------------------------------------------------------------------------------|  
-| row       | Number: row index of the cell to start filling [\[0..height\]]({{< ref "height" >}})        |  
-| col       | Number: column index of the cell to start filling [\[0..width\]]({{< ref "width" >}})       |  
-| value     | Any: the value to fill cells with, such as color, image, string, etc.                       |  
-| border    | Boolean: Specifies whether to include the border of the flood fill area. Default is `false` |  
+| Param     | Description                                                                                 |
+|-----------|---------------------------------------------------------------------------------------------|
+| `row`     | Number: row index of the cell to start filling [\[0..height\]]({{< ref "height" >}})        |
+| `col`     | Number: column index of the cell to start filling [\[0..width\]]({{< ref "width" >}})       |
+| `value`   | Any: A valid JavaScript value                                                               |
+| `border`  | Boolean: Specifies whether to include the border of the flood fill area. Default is `false` | 

@@ -73,6 +73,6 @@ function keyPressed() {
 
 ## Parameters  
 
-| parameter | description                                |  
+| Param     | Description                                |  
 |-----------|--------------------------------------------|  
-| times     | Number: number of cells to clear at random |
+| `times`   | Number: number of cells to clear at random |

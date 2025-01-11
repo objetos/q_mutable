@@ -79,6 +79,6 @@ function reset() {
 
 ## Parameters  
 
-| parameter | description                                                                                                                                                        |  
+| Param     | Description                                                                                                                                                        |  
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-| value     | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |  
+| `value`   | Any: A valid JavaScript value                                                        |

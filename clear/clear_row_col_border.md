@@ -89,8 +89,8 @@ function reset() {
 
 ## Parameters
 
-| parameter | description                                                                                 |
+| Param     | Description                                                                                 |
 |-----------|---------------------------------------------------------------------------------------------|
-| row       | Number: row index of the cell to start clearing [\[0..height\]]({{< ref "height" >}})       |
-| col       | Number: column index of the cell to start clearing [\[0..width\]]({{< ref "width" >}})      |
-| border    | Boolean: Specifies whether to include the border of the flood fill area. Default is `false` |
+| `row`     | Number: row index of the cell to start clearing [\[0..height\]]({{< ref "height" >}})       |
+| `col`     | Number: column index of the cell to start clearing [\[0..width\]]({{< ref "width" >}})      |
+| `border`  | Boolean: Specifies whether to include the border of the flood fill area. Default is `false` |

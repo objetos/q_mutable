@@ -83,6 +83,6 @@ function reset() {
 
 ## Parameters
 
-| parameter | description                                                                                                                         |
+| Param     | Description                                                                                                                         |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------|
-| value     | Any: The value to fill all empty cells with. Can be a [p5.Color](https://p5js.org/reference/#/p5.Color), image, string, number, etc.|
+| `value`   | Any: A valid JavaScript value                                                        |

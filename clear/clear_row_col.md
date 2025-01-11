@@ -77,7 +77,7 @@ function reset() {
 
 ## Parameters
 
-| parameter | description                                                                    |
+| Param     | Description                                                                    |
 |-----------|--------------------------------------------------------------------------------|
-| row       | Number: row number of the cell to clear [\[0..height\]]({{< ref "height" >}})  |
-| col       | Number: column number of the cell to clear [\[0..width\]]({{< ref "width" >}}) |
+| `row`     | Number: row number of the cell to clear [\[0..height\]]({{< ref "height" >}})  |
+| `col`     | Number: column number of the cell to clear [\[0..width\]]({{< ref "width" >}}) |
