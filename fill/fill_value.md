@@ -74,7 +74,7 @@ function reset() {
 {{< /details >}}
 
 {{< callout type="info" >}}
-**Observation:** Empty cells appear black because the background is set to black (`background(0)`), while the fill color is white (`fill(255)`).
+Empty cells appear black because the background is set to black (`background(0)`), while the fill color is white (`fill(255)`).
 {{< /callout >}}
 
 ## Syntax

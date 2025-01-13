@@ -85,8 +85,7 @@ function reset() {
 
 <!--TODO: move observation below to missed value (data types) pending chapter-->
 
-{{< callout type="info" >}}  
-**Observation**  
+{{< callout type="info" >}}   
 To replace `value1` with `value2`, all cells containing `value1` must share the same memory reference, see [search()]({{< ref "search" >}}).  
 {{< /callout >}}
 
@@ -96,7 +95,7 @@ To replace `value1` with `value2`, all cells containing `value1` must share the 
 
 ## Parameters  
 
-| Param     | Description                                                                                                                                                        |  
-|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-| `value1`  | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |  
-| `value2`  | [p5.Image](https://p5js.org/reference/#/p5.Image) \| [p5.Graphics](https://p5js.org/reference/#/p5.Graphics) \| [p5.Color](https://p5js.org/reference/#/p5.Color) \| array \| object \| string \| number |  
+| Param     | Description                   |  
+|-----------|-------------------------------|  
+| `value1`  | Any: A valid JavaScript value |  
+| `value2`  | Any: A valid JavaScript value |  

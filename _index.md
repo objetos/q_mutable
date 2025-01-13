@@ -8,7 +8,6 @@ draft: false
 **Mutator methods** allow you to directly modify the state of the `quadrille` they are called upon. These transformations are persistent and update the `quadrille` instance **in-place**.
 
 {{< callout type="info" >}}  
-**Observation**  
 Methods in this category support [method chaining](https://en.wikipedia.org/wiki/Method_chaining), enabling multiple modifications to be applied sequentially in a concise and readable manner.  
 
 For example, the following chained call:  
