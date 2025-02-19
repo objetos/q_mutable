@@ -37,7 +37,7 @@ function keyPressed() {
 }
 {{< /p5-global-iframe >}}  
 
-{{< details title="code" open=false >}}  
+{{% details title="code" open=true %}}  
 ```js  
 Quadrille.cellLength = 30;  
 let times = 5;  
@@ -65,7 +65,7 @@ function keyPressed() {
   p.html(`mouse click clears ${times} cell(s)`);
 }
 ```  
-{{< /details >}}  
+{{% /details %}}  
 
 ## Syntax  
 

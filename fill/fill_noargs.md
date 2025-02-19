@@ -35,7 +35,7 @@ function draw() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 // Set the cell size (default is 100, changed to 20 here)
 Quadrille.cellLength = 20;
@@ -62,7 +62,7 @@ function draw() {
   drawQuadrille(q2, { x: 330 });
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 ## Syntax
 

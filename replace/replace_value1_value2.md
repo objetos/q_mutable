@@ -45,7 +45,7 @@ function reset() {
 }
 {{< /p5-global-iframe >}}  
 
-{{< details title="code" open=false >}}  
+{{% details title="code" open=true %}}  
 ```js  
 Quadrille.cellLength = 40;
 let quadrille;  
@@ -81,7 +81,7 @@ function reset() {
   quadrille.rand(25, lime).rand(25, blue);  
 }
 ```  
-{{< /details >}}  
+{{% /details %}}  
 
 <!--TODO: move observation below to missed value (data types) pending chapter-->
 

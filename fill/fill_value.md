@@ -40,7 +40,7 @@ function reset() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 Quadrille.cellLength = 20;
 let quadrille;
@@ -71,7 +71,7 @@ function reset() {
   quadrille.rand(100, color('lime')).rand(100, color('blue'));
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 {{< callout type="info" >}}
 Empty cells appear black because the background is set to black (`background(0)`), while the fill color is white (`fill(255)`).

@@ -60,7 +60,7 @@ function keyPressed() {
 }
 {{< /p5-global-iframe >}}
 
-{{< details title="code" open=false >}}
+{{% details title="code" open=true %}}
 ```js
 let quadrille, hint;
 let images = [];
@@ -110,7 +110,7 @@ function keyPressed() {
   }
 }
 ```
-{{< /details >}}
+{{% /details %}}
 
 ## Syntax
 

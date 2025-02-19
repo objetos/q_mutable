@@ -40,7 +40,7 @@ function reset() {
 }  
 {{< /p5-global-iframe >}}  
 
-{{< details title="code" open=false >}}  
+{{% details title="code" open=true %}}  
 ```js  
 Quadrille.cellLength = 40;
 let quadrille;
@@ -71,7 +71,7 @@ function reset() {
   quadrille.rand(25, color('lime')).rand(25, color('blue'));  
 }  
 ```  
-{{< /details >}}  
+{{% /details %}}  
 
 ## Syntax  
 
