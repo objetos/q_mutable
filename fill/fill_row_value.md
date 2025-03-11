@@ -77,5 +77,5 @@ function reset() {
 
 | Param     | Description                                                                     |  
 |-----------|---------------------------------------------------------------------------------|  
-| `row`     | Number: The row index to fill [\[0..height\]]({{< ref "height" >}})             |  
+| `row`     | Number: The row index to fill [[0..height]]({{< ref "height" >}})             |  
 | `value`   | Any: A valid JavaScript value                                                   |

@@ -77,4 +77,4 @@ function reset() {
 
 | Param     | Description                                                          |
 |-----------|----------------------------------------------------------------------|
-| `row`     | Number: The row index to clear [\[0..height\]]({{< ref "height" >}}) |
+| `row`     | Number: The row index to clear [[0..height]]({{< ref "height" >}}) |

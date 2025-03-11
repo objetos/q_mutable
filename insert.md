@@ -76,4 +76,4 @@ function reset() {
 
 | Param     | Description                                                                     |
 |-----------|---------------------------------------------------------------------------------|
-| `row`     | Number: number of the row to be inserted [\[0..height\]]({{< ref "height" >}})] |
+| `row`     | Number: number of the row to be inserted [[0..height]]({{< ref "height" >}})] |

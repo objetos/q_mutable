@@ -76,4 +76,4 @@ function reset() {
 
 | Param     | Description                                                               |
 |-----------|---------------------------------------------------------------------------|
-| `row`     | Number: number of row to be deleted [\[0..height\]]({{< ref "height" >}}) |
+| `row`     | Number: number of row to be deleted [[0..height]]({{< ref "height" >}}) |
