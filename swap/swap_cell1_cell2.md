@@ -41,7 +41,7 @@ function draw() {
 function mousePressed() {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  if (row >= 0 && row < quadrille.height && col >= 0 && col < quadrille.width) {
+  if (quadrille.isValid(row, col)) {
     // Update active cell
     activeCell === 1 ? (cell1 = [row, col]) : (cell2 = [row, col]);
     activeCell = activeCell === 1 ? 2 : 1; // Alternate active cell
@@ -92,7 +92,7 @@ function draw() {
 function mousePressed() {
   const row = quadrille.mouseRow;
   const col = quadrille.mouseCol;
-  if (row >= 0 && row < quadrille.height && col >= 0 && col < quadrille.width) {
+  if (quadrille.isValid(row, col)) {
     // Update active cell
     activeCell === 1 ? (cell1 = [row, col]) : (cell2 = [row, col]);
     activeCell = activeCell === 1 ? 2 : 1; // Alternate active cell

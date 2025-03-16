@@ -40,7 +40,7 @@ function draw() {
 
 function mousePressed() {
   const row = quadrille.mouseRow;
-  if (row >= 0 && row < quadrille.height) {
+  if (quadrille.isValid(row, 0)) {
     // Update the active row
     activeRow === 1 ? (row1 = row) : (row2 = row);
     activeRow = activeRow === 1 ? 2 : 1; // Alternate active row
@@ -88,7 +88,7 @@ function draw() {
 
 function mousePressed() {
   const row = quadrille.mouseRow;
-  if (row >= 0 && row < quadrille.height) {
+  if (quadrille.isValid(row, 0)) {
     // Update the active row
     activeRow === 1 ? (row1 = row) : (row2 = row);
     activeRow = activeRow === 1 ? 2 : 1; // Alternate active row
