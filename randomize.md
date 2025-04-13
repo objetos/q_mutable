@@ -66,6 +66,10 @@ function keyPressed() {
 ```
 {{% /details %}}
 
+{{< callout type="info" >}}
+For deterministic (repeatable) randomness, explicitly call [randomSeed(seed)](https://p5js.org/reference/p5/randomSeed/) before `randomize()`.
+{{< /callout >}}
+
 ## Syntax
 
 > `randomize()`
