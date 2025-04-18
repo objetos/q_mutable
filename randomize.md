@@ -15,12 +15,11 @@ Quadrille.cellLength = 32;
 let mandrill;
 let quadrille;
 
-function preload() {
-  mandrill = loadImage('../mandrill.png');
-}
-
-function setup() {
+async function setup() {
   createCanvas(512, 512);
+  
+  mandrill = await loadImage('../mandrill.png');
+  
   quadrille = createQuadrille(16, mandrill);
 }
 
@@ -43,12 +42,11 @@ Quadrille.cellLength = 32;
 let mandrill;
 let quadrille;
 
-function preload() {
-  mandrill = loadImage('mandrill.png');
-}
-
-function setup() {
+async function setup() {
   createCanvas(512, 512);
+  
+  mandrill = await loadImage('mandrill.png');
+  
   quadrille = createQuadrille(16, mandrill);
 }
 

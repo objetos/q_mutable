@@ -16,14 +16,14 @@ let images = [];
 let cell1 = [0, 0], cell2 = [4, 4]; // Start with two active cells
 let activeCell = 1; // Indicates which cell (1 or 2) moves on a click
 
-function preload() {
-  for (let i = 1; i <= 25; i++) {
-    images.push(loadImage(`/paintings/p${i}.jpg`));
-  }
-}
-
-function setup() {
+async function setup() {
   createCanvas(500, 500);
+  
+  // Load images
+  for (let i = 1; i <= 25; i++) {
+    images.push(await loadImage(`/paintings/p${i}.jpg`));
+  }
+  
   // Create the quadrilles
   quadrille = createQuadrille(5, images);
   hint = createQuadrille(1, 1);
@@ -67,14 +67,14 @@ let images = [];
 let cell1 = [0, 0], cell2 = [4, 4]; // Start with two active cells
 let activeCell = 1; // Indicates which cell (1 or 2) moves on a click
 
-function preload() {
-  for (let i = 1; i <= 25; i++) {
-    images.push(loadImage(`/paintings/p${i}.jpg`));
-  }
-}
-
-function setup() {
+async function setup() {
   createCanvas(500, 500);
+  
+  // Load images
+  for (let i = 1; i <= 25; i++) {
+    images.push(await loadImage(`/paintings/p${i}.jpg`));
+  }
+  
   // Create the quadrilles
   quadrille = createQuadrille(5, images);
   hint = createQuadrille(1, 1);

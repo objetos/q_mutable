@@ -16,14 +16,14 @@ let images = [];
 let row1 = 0, row2 = 4; // Default active rows
 let activeRow = 1; // Indicates which row (1 or 2) is updated on a click
 
-function preload() {
-  for (let i = 1; i <= 25; i++) {
-    images.push(loadImage(`/paintings/p${i}.jpg`));
-  }
-}
-
-function setup() {
+async function setup() {
   createCanvas(500, 500);
+  
+  // Load images
+  for (let i = 1; i <= 25; i++) {
+    images.push(await loadImage(`/paintings/p${i}.jpg`));
+  }
+  
   // Create the quadrilles
   quadrille = createQuadrille(5, images);
   hint = createQuadrille(5, 1); // For drawing row hints
@@ -64,14 +64,14 @@ let images = [];
 let row1 = 0, row2 = 4; // Default active rows
 let activeRow = 1; // Indicates which row (1 or 2) is updated on a click
 
-function preload() {
-  for (let i = 1; i <= 25; i++) {
-    images.push(loadImage(`/paintings/p${i}.jpg`));
-  }
-}
-
-function setup() {
+async function setup() {
   createCanvas(500, 500);
+  
+  // Load images
+  for (let i = 1; i <= 25; i++) {
+    images.push(await loadImage(`/paintings/p${i}.jpg`));
+  }
+  
   // Create the quadrilles
   quadrille = createQuadrille(5, images);
   hint = createQuadrille(5, 1); // For drawing row hints
