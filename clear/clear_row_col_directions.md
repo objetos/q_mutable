@@ -1,5 +1,5 @@
 ---
-weight: 5
+weight: 56
 title: clear(row, col, directions)
 ---
 
