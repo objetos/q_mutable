@@ -81,4 +81,6 @@ function reset() {
 |-----------|--------------------------------------------------------------------------------------|  
 | `row`     | Number: row number of the cell to fill [[0..height]]({{< ref "height" >}})         |  
 | `col`     | Number: column number of the cell to fill [[0..width]]({{< ref "width" >}})        |  
-| `value`   | Any: A valid JavaScript value                                                        |  
+| `value`[^1] | Any: A valid JavaScript value                                                        |  
+
+[^1]: If `value` is a function, it is evaluated **per cell**. Use `Quadrille.factory(({ row, col }) => new Object(...))` to generate a new object per cell. For display routines, use a plain function like `({ row, col, options }) => { ... }`. See [`options`]({{< relref display_fns >}}) for available parameters.

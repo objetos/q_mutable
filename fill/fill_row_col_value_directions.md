@@ -93,5 +93,7 @@ function reset() {
 |--------------|---------------------------------------------------------------------------------------------|  
 | `row`        | Number: row index of the cell to start filling [[0..height]]({{< ref "height" >}})        |  
 | `col`        | Number: column index of the cell to start filling [[0..width]]({{< ref "width" >}})       |  
-| `value`      | Any: A valid JavaScript value                                                               |  
+| `value`[^1]  | Any: A valid JavaScript value                                                               |  
 | `directions` | Number: Number of directions for flood fill (4 or 8), default is 4                          |  
+
+[^1]: If `value` is a function, it is evaluated **per cell**. Use `Quadrille.factory(({ row, col }) => new Object(...))` to generate a new object per cell. For display routines, use a plain function like `({ row, col, options }) => { ... }`. See [`options`]({{< relref display_fns >}}) for available parameters.

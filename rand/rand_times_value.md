@@ -94,4 +94,6 @@ For deterministic (repeatable) randomness, explicitly call [randomSeed(seed)](ht
 | Param     | Description                                                                                                                |  
 |-----------|----------------------------------------------------------------------------------------------------------------------------|  
 | `times`   | Number: number of cells to fill randomly                                             |  
-| `value`   | Any: A valid JavaScript value                                                        |
+| `value`[^1] | Any: A valid JavaScript value                                                        |
+
+[^1]: If `value` is a function, it is evaluated **per cell**. Use `Quadrille.factory(({ row, col }) => new Object(...))` to generate a new object per cell. For display routines, use a plain function like `({ row, col, options }) => { ... }`. See [`options`]({{< relref display_fns >}}) for available parameters.
