@@ -76,6 +76,6 @@ function reset() {
 
 | Param       | Description                                                                                         |
 | ----------- | --------------------------------------------------------------------------------------------------- |
-| `predicate` | Function: condition that determines which cells to clear. Receives `{ row, col, value }` as input.¹ |
+| `predicate` | Function: condition that determines which cells to clear. Receives `{ row, col, value }` as input[^1] |
 
-¹ The `value` field may be of any type, including functions or objects.
+[^1]: The `value` field may be of any type, including functions or objects.
