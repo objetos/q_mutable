@@ -1,6 +1,6 @@
 ---
-weight: 2
-title: clear(row, col)
+weight: 3
+title: clear(row, col
 ---
 
 Clears a specific cell in the quadrille, setting it to empty (i.e., `null`).

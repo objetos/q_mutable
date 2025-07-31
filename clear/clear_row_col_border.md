@@ -1,5 +1,5 @@
 ---
-weight: 7
+weight: 8
 title: clear(row, col, border)
 ---
 
