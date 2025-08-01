@@ -7,7 +7,7 @@ Clears all cells that match a given condition, setting their values to `null`.
 
 ## Example
 
-(move the mouse to clear all `🐉` from the current column; press any key to reset)\
+(move the mouse to clear all `🐉` from the current column; click to reset)  
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 'use strict';
 
@@ -29,7 +29,7 @@ function mouseMoved() {
   quadrille.clear(({ col: c, value }) => c === col && value === '🐉');
 }
 
-function keyPressed() {
+function mouseClicked() {
   reset();
 }
 
@@ -58,7 +58,7 @@ function mouseMoved() {
   quadrille.clear(({ col: c, value }) => c === col && value === '🐉');
 }
 
-function keyPressed() {
+function mouseClicked() {
   reset();
 }
 

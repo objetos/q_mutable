@@ -7,7 +7,7 @@ Fills cells matching a predicate condition with the specified `value`.
 
 ## Example
 
-(move the mouse to fill empty cells in the current row with `🐉`; press any key to reset)  
+(move the mouse to fill empty cells in the current row with `🐉`; click to reset)  
 {{< p5-global-iframe quadrille="true" width="425" height="425" >}}
 'use strict';
 
@@ -28,7 +28,7 @@ function mouseMoved() {
   quadrille.fill(({ row, col, value }) => row === quadrille.mouseRow && value === null, '🐉');
 }
 
-function keyPressed() {
+function mouseClicked() {
   reset();
 }
 
@@ -58,7 +58,7 @@ function mouseMoved() {
   quadrille.fill(({ row, col, value }) => row === quadrille.mouseRow && value === null, '🐉');
 }
 
-function keyPressed() {
+function mouseClicked() {
   reset();
 }
 
