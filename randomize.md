@@ -17,9 +17,7 @@ let quadrille;
 
 async function setup() {
   createCanvas(512, 512);
-  
   mandrill = await loadImage('../mandrill.png');
-  
   quadrille = createQuadrille(16, mandrill);
 }
 
@@ -44,9 +42,7 @@ let quadrille;
 
 async function setup() {
   createCanvas(512, 512);
-  
   mandrill = await loadImage('mandrill.png');
-  
   quadrille = createQuadrille(16, mandrill);
 }
 
