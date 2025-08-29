@@ -4,10 +4,10 @@ draft: false
 title: shift(n, wrap)
 ---
 
-Shifts the whole grid left or right.
-`n > 0` shifts **left** by `n`; `n < 0` shifts **right** by `|n|`.
-With **wrap** on (default) it wraps around; with **wrap** off it slides and leaves empty cells.
-Returns this quadrille (**chainable**) or `undefined` (when `n = 0`).
+Shifts the whole grid left or right. Returns this quadrille (**chainable**).
+
+* `n > 0` shifts **left** by `n`; `n < 0` shifts **right** by `|n|`.
+* With `wrap` on (default) it **wraps around**; with `wrap` off it **slides**, leaving **empty cells** behind.
 
 ## Example
 
