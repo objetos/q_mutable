@@ -1,7 +1,7 @@
 ---
 bookCollapseSection: true
 title: "swap(args)"
-weight: 7
+weight: 6
 ---
 
 Either swaps the contents of two cells of two rows.
