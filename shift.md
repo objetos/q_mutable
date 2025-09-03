@@ -4,7 +4,7 @@ draft: false
 title: shift(n, wrap)
 ---
 
-Shifts the whole grid left or right. Returns this quadrille (**chainable**).
+Shifts cells left or right by a single offset—as if the grid were flattened into a single strip—and returns this quadrille (**chainable**).
 
 * `n > 0` shifts **left** by `n`; `n < 0` shifts **right** by `|n|`.
 * With `wrap` on (default) it **wraps around**; with `wrap` off it **slides**, leaving **empty cells** behind.

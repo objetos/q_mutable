@@ -26,7 +26,8 @@ quadrille.randomize();
 
 - **[delete(row)]({{< ref "delete" >}}):** Deletes the specified `row` from the `quadrille`.  
 - **[insert(row)]({{< ref "insert" >}}):** Inserts an empty `row` into the `quadrille` at the specified position.   
-- **[shift(n, wrap)]({{< ref "shift" >}}):** Shifts the whole grid left/right by `n`. With `wrap` on it wraps around; with `wrap` off it slides and leaves empty cells.
+- **[shift(n, wrap)]({{< ref "shift" >}}):** Shifts cells left/right by n—as if the grid were flattened into a single strip. With wrap on, offsets wrap around; with wrap off, vacated positions become empty.
+- **[slide(dRow, dCol, wrap)]({{< ref "slide" >}})**: Slides cells in two dimensions by the row/column offset (dRow, dCol). With wrap on, offsets wrap around the edges.
 - **[randomize()]({{< ref "randomize" >}}):** Randomizes the current content of the `quadrille`, shuffling cell values.
 - **[rand(args)]({{< ref "rand" >}}):** Randomly populates or empties a specified number of cells in the quadrille.
 - **[swap(args)]({{< ref "swap" >}}):** Swaps content between two specified cells or rows as defined by `args`.  
