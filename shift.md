@@ -63,7 +63,7 @@ function keyPressed() {
 
 function reset() {
   // Random board so shift behavior is easy to see on click
-  q = createQuadrille(16, 10)
+  q = createQuadrille(15, 10)
     .rand(5, '🐲')
     .rand(5, '🦑')
     .rand(5, '🦜')

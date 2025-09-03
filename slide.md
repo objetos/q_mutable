@@ -32,7 +32,7 @@ Quadrille.outlineWeight = 1;
 Quadrille.cellLength = 30;
 
 function setup() {
-  createCanvas(16 * Quadrille.cellLength, 10 * Quadrille.cellLength);
+  createCanvas(450, 300);
   reset();
   // Slide controls:
   wrap = createCheckbox('Wrap', true);
@@ -79,7 +79,7 @@ function keyPressed() {
 
 function reset() {
   // Random board so slide behavior is easy to see
-  q = createQuadrille(16, 10)
+  q = createQuadrille(15, 10)
     .rand(5, '🐲')
     .rand(5, '🦑')
     .rand(5, '🦜')
@@ -101,7 +101,7 @@ Quadrille.outlineWeight = 1;
 Quadrille.cellLength = 30;
 
 function setup() {
-  createCanvas(16 * Quadrille.cellLength, 10 * Quadrille.cellLength);
+  createCanvas(450, 300);
   reset();
   // Slide controls:
   wrap = createCheckbox('Wrap', true);
@@ -148,7 +148,7 @@ function keyPressed() {
 
 function reset() {
   // Random board so slide behavior is easy to see
-  q = createQuadrille(16, 10)
+  q = createQuadrille(15, 10)
     .rand(5, '🐲')
     .rand(5, '🦑')
     .rand(5, '🦜')
