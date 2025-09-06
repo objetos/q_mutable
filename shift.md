@@ -10,6 +10,10 @@ Shifts cells by a **row/column offset**. Returns this quadrille (**chainable**).
 * `dCol` moves **right** when positive; **left** when negative.
 * With `wrap` on (default) it **wraps around**; with `wrap` off it **slides**, leaving **empty cells** behind.
 
+{{< callout type="info" >}}
+For a **non-destructive static version**, call `Quadrille.shift(q, dRow, dCol, wrap)`.
+{{< /callout >}}
+
 ## Example
 
 (drag to shift; press any key to reset)
