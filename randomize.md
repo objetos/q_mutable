@@ -9,7 +9,7 @@ Randomly re-arranges the quadrille cells.
 ## Example
 
 (mouse click to randomize; press any key to reset)\
-{{< p5-global-iframe quadrille="true" width="537" height="537" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 32;
 let mandrill;
@@ -32,7 +32,7 @@ function mouseClicked() {
 function keyPressed() {
   quadrille = createQuadrille(16, mandrill);
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -42,7 +42,7 @@ let quadrille;
 
 async function setup() {
   createCanvas(512, 512);
-  mandrill = await loadImage('mandrill.png');
+  mandrill = await loadImage('/images/mandrill.png');
   quadrille = createQuadrille(16, mandrill);
 }
 

@@ -17,7 +17,7 @@ For a **non-destructive static version**, call `Quadrille.shift(q, dRow, dCol, w
 ## Example
 
 (drag to shift; press any key to reset)
-{{< p5-global-iframe quadrille="true" width="475" height="325" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 
 let q;
@@ -85,7 +85,7 @@ function reset() {
   refCell = undefined;
   lastCell = undefined;
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

@@ -1,10 +1,10 @@
 ---
-weight: 10
+weight: 5
 draft: false
 title: "maze(value)"
 ---
 
-Clears the quadrille, then generates a [perfect maze](https://en.wikipedia.org/wiki/Maze_generation_algorithm) at the current dimensions, filling wall cells with `value` — the maze analogue of the zero-arg [fill()]({{< ref "fill" >}}) chessboard. The generator is an iterative [randomized depth-first search](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Iterative_implementation_%28with_explicit_stack%29) over the room lattice. Walls are filled cells and corridors are empty cells, so [reach]({{< ref "reach" >}}) and [path]({{< ref "path" >}}) work on the result out of the box. Rooms sit at even `(row, col)` indices, cell `(0, 0)` is always open, and the maze is borderless: the quadrille edge bounds it. Perfect means any two empty cells are joined by exactly one path, so no start or end cells are needed. Returns the quadrille (**chainable**).
+Clears the quadrille, then generates a [perfect maze](https://en.wikipedia.org/wiki/Maze_generation_algorithm) at the current dimensions, filling wall cells with `value` — the maze analogue of the zero-arg [fill()]({{< ref "fill_noargs" >}}) chessboard. The generator is an iterative [randomized depth-first search](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Iterative_implementation_%28with_explicit_stack%29) over the room lattice. Walls are filled cells and corridors are empty cells, so [reach]({{< ref "reach" >}}) and [path]({{< ref "path" >}}) work on the result out of the box. Rooms sit at even `(row, col)` indices, cell `(0, 0)` is always open, and the maze is borderless: the quadrille edge bounds it. Perfect means any two empty cells are joined by exactly one path, so no start or end cells are needed. Returns the quadrille (**chainable**).
 
 ## Example
 

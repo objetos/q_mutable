@@ -9,7 +9,7 @@ Inserts an empty row into the quadrille.
 ## Example
 
 (click any row; press any key to reset)\
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 20;
 let quadrille;
@@ -36,7 +36,7 @@ function reset() {
   quadrille = createQuadrille(20, 10, 50, color('red'));
   quadrille.rand(50, color('lime')).rand(50, color('blue'));
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
