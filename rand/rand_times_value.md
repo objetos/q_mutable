@@ -8,7 +8,7 @@ Randomly fills the quadrille with the specified `value` a given number of `times
 ## Example
 
 (numeric keys define `times`; other keys define `value`)\
-{{< p5-global-iframe quadrille="true" width="385" height="415" >}}  
+{{< p5 quadrille="true" >}}  
 'use strict';  
 Quadrille.cellLength = 30;
 let times = 5;
@@ -42,7 +42,7 @@ function keyPressed() {
   +key ? times = +key : value = random(values);
   p.html(`mouse click fills ${times} time(s) with ${value}`);
 }
-{{< /p5-global-iframe >}}  
+{{< /p5 >}}  
 
 {{% details title="code" open=true %}}  
 ```js  
@@ -96,4 +96,4 @@ For deterministic (repeatable) randomness, explicitly call [randomSeed(seed)](ht
 | `times`   | Number: number of cells to fill randomly                                             |  
 | `value`[^1] | Any: A valid JavaScript value                                                        |
 
-[^1]: If `value` is a function, it is evaluated **per cell**. Use `Quadrille.factory(({ row, col }) => new Object(...))` to generate a new object per cell. For display routines, use a plain function like `({ row, col, options }) => { ... }`. See [`options`]({{< relref display_fns >}}) for available parameters.
+[^1]: A plain function `value` is **stored, not called** — it becomes a per-cell display routine `({ row, col, options }) => { ... }` (see [`options`]({{< relref display_fns >}})). To have a function **evaluated per cell** at fill time — a fresh object or a varied tile per cell — tag it: `Quadrille.factory(({ row, col }) => new Object(...))`.

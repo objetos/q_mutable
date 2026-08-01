@@ -3,12 +3,12 @@ weight: 2
 title: rand(times)
 ---
 
-Randomly clears `times` number of cells in the quadrille. Same as [random(times, null)]({{< ref "rand_times_value" >}}).
+Randomly clears `times` number of cells in the quadrille. Same as [rand(times, null)]({{< ref "rand_times_value" >}}).
 
 ## Example
 
 (numeric keys define `times`; mouse click randomly clears `times` number of cells)\
-{{< p5-global-iframe quadrille="true" width="385" height="415" >}}  
+{{< p5 quadrille="true" >}}  
 'use strict';
 Quadrille.cellLength = 30;  
 let times = 5;  
@@ -35,7 +35,7 @@ function keyPressed() {
   +key && (times = +key);  
   p.html(`mouse click clears ${times} cell(s)`);
 }
-{{< /p5-global-iframe >}}  
+{{< /p5 >}}  
 
 {{% details title="code" open=true %}}  
 ```js  

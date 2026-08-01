@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 2
 title: swap(row1, col1, row2, col2)
 ---
 
@@ -8,8 +8,8 @@ Swaps the contents of the cell at `(row1, col1)` with the cell at `(row2, col2)`
 ## Example
 
 (click to select cells, press `s` to swap, or `r` to randomize)\
-{{< p5-global-iframe quadrille="true" width="525" height="525" >}}
-'use strict'
+{{< p5 quadrille="true" >}}
+'use strict';
 
 let quadrille, hint;
 let images = [];
@@ -58,7 +58,7 @@ function keyPressed() {
     quadrille.randomize();
   }
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

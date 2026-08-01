@@ -8,7 +8,7 @@ Swaps the contents of `row1` and `row2` in the `quadrille`.
 ## Example
 
 (click to select rows, press `s` to swap, or `r` to randomize)\
-{{< p5-global-iframe quadrille="true" width="525" height="525" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 
 let quadrille, hint;
@@ -55,7 +55,7 @@ function keyPressed() {
     quadrille.randomize();
   }
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

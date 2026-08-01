@@ -3,23 +3,22 @@ weight: 2
 title: replace(value1, value2)  
 ---
 
-Replaces all cells containing `value1` with `value2` in the quadrille. 
+Replaces all cells containing `value1` — matched by identity (`===`) — with `value2`. The two-arg sibling of [replace(value)]({{< ref "replace_value" >}}), which retargets every filled cell instead.
 
 ## Example
 
 (click on any cell to replace all cells with the same value with a 🙈; press any key to reset)\
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}  
+{{< p5 quadrille="true" >}}  
 'use strict';  
 Quadrille.cellLength = 40;
 let quadrille;  
-let red, lime, blue, cyan;
+let red, lime, blue;
 
 function setup() {  
   createCanvas(400, 400);  
   red = color('red');  
   lime = color('lime');  
   blue = color('blue');  
-  cyan = color('cyan');  
   reset();  
 }  
 
@@ -43,20 +42,19 @@ function reset() {
   quadrille = createQuadrille(10, 10, 25, red);
   quadrille.rand(25, lime).rand(25, blue);  
 }
-{{< /p5-global-iframe >}}  
+{{< /p5 >}}  
 
 {{% details title="code" open=true %}}  
 ```js  
 Quadrille.cellLength = 40;
 let quadrille;  
-let red, lime, blue, cyan;
+let red, lime, blue;
 
 function setup() {  
   createCanvas(400, 400);  
   red = color('red');  
   lime = color('lime');  
   blue = color('blue');  
-  cyan = color('cyan');  
   reset();  
 }  
 
@@ -83,10 +81,10 @@ function reset() {
 ```  
 {{% /details %}}  
 
-<!--TODO: move observation below to missed value (data types) pending chapter-->
+<!--the shared-instance identity thread now spans fill_value / replace / clear-flood / search (2026-08-01); Foundations Data (REORG Stage 6) states empty-is-null and value identity day one-->
 
 {{< callout type="info" >}}   
-To replace `value1` with `value2`, all cells containing `value1` must share the same memory reference, see [search()]({{< ref "search" >}}).  
+`value1` is matched by **identity** (`===`), so all cells meant to be caught must share the **same instance** — the classic gotcha with object values like colors; see the identity note in [fill(value)]({{< ref "fill_value" >}}) and strict [search]({{< ref "search" >}}). The example dodges it by storing each color once and reusing the variable.
 {{< /callout >}}
 
 ## Syntax  
@@ -100,4 +98,4 @@ To replace `value1` with `value2`, all cells containing `value1` must share the 
 | `value1`  | Any: A valid JavaScript value |  
 | `value2`[^1] | Any: A valid JavaScript value |  
 
-[^1]: If `value2` is a function, it is evaluated **per cell**. Use `Quadrille.factory(({ row, col }) => new Object(...))` to generate a new object per cell. For display routines, use a plain function like `({ row, col, options }) => { ... }`. See [`options`]({{< relref display_fns >}}) for available parameters.
+[^1]: A plain function `value2` is **stored, not called** — it becomes a per-cell display routine `({ row, col, options }) => { ... }` (see [`options`]({{< relref display_fns >}})). To have a function **evaluated per cell** at replace time — a fresh object or a varied tile per cell — tag it: `Quadrille.factory(({ row, col }) => new Object(...))`.
