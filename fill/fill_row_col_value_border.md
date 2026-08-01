@@ -1,14 +1,14 @@
 ---
-weight: 10
+weight: 9
 title: fill(row, col, value, border)  
 ---
 
-Fills a specific cell and all connected cells in the quadrille with the specified `value` using a [flood fill](https://en.wikipedia.org/wiki/Flood_fill) algorithm. The `border` parameter determines if the fill includes the boundary of the flood fill area.
+Fills a specific cell and all connected cells **holding the same value as it** with `value` via [flood fill](https://en.wikipedia.org/wiki/Flood_fill); with `border = true`, the **rim** where the flood stops is filled too.
 
 ## Example
 
 (click on any cell to perform flood fill with selected border option; press any key to reset)  
-{{< p5-global-iframe quadrille="true" width="425" height="445" >}}  
+{{< p5 quadrille="true" >}}  
 'use strict';  
 Quadrille.cellLength = 20;  
 let quadrille;  
@@ -43,7 +43,7 @@ function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));  
   quadrille.rand(100, color('lime')).rand(100, color('blue'));
 }  
-{{< /p5-global-iframe >}}  
+{{< /p5 >}}  
 
 {{% details title="code" open=true %}}  
 ```js  
@@ -83,6 +83,10 @@ function reset() {
 ```  
 {{% /details %}}  
 
+{{< callout type="info" >}}
+**Connected means same value, and sameness is identity** (`===`) — see [clear(row, col, directions)]({{< ref "clear_row_col_directions" >}}) for the identity note and [clear(row, col, border)]({{< ref "clear_row_col_border" >}}) for the rim semantics; here the rim is **filled** with `value` instead of cleared.
+{{< /callout >}}
+
 ## Syntax  
 
 > `fill(row, col, value, border)`  
@@ -96,4 +100,4 @@ function reset() {
 | `value`[^1] | Any: A valid JavaScript value                                                               |
 | `border`  | Boolean: Specifies whether to include the border of the flood fill area. Default is `false` | 
 
-[^1]: If `value` is a function, it is evaluated **per cell**. Use `Quadrille.factory(({ row, col }) => new Object(...))` to generate a new object per cell. For display routines, use a plain function like `({ row, col, options }) => { ... }`. See [`options`]({{< relref display_fns >}}) for available parameters.
+[^1]: A plain function `value` is **stored, not called** — it becomes a per-cell display routine `({ row, col, options }) => { ... }` (see [`options`]({{< relref display_fns >}})). To have a function **evaluated per cell** at fill time — a fresh object or a varied tile per cell — tag it: `Quadrille.factory(({ row, col }) => new Object(...))`.

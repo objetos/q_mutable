@@ -12,7 +12,7 @@ To use little-endian ordering instead, pass `true` as the third argument.
 ## Example
 
 (click to toggle the smiley bitboard pattern)  
-{{< p5-global-iframe quadrille="true" width="375" height="375" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 50;
 
@@ -35,7 +35,7 @@ function mousePressed() {
   smileyOn ? quadrille.clear() : quadrille.fill(SMILEY, color('black'));
   smileyOn = !smileyOn;
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -63,6 +63,10 @@ function mousePressed() {
 ```
 {{% /details %}}
 
+{{< callout type="warning" >}}
+The bitboard must be a **BigInt** (note the `n` suffix: `0b0011100n`). A plain Number is dispatched as [fill(row, value)]({{< ref "fill_row_value" >}}) instead — silently filling a row, not a pattern.
+{{< /callout >}}
+
 ## Syntax
 
 > `fill(bitboard, value[, littleEndian])`
@@ -71,6 +75,6 @@ function mousePressed() {
 
 | Param          | Description                                                                                          |
 | -------------- | ---------------------------------------------------------------------------------------------------- |
-| `bitboard`     | BigInt (or Number): A bitboard whose binary representation determines the filled cells               |
+| `bitboard`     | BigInt: A bitboard whose binary representation determines the filled cells                           |
 | `value`        | Any: A valid JavaScript value (e.g. string, number, object, function) to assign to filled cells      |
 | `littleEndian` | Optional Boolean: If `true`, the bitboard is interpreted in little-endian order (default is `false`) |

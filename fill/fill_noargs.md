@@ -7,7 +7,7 @@ Fills all cells in the quadrille with a chessboard pattern.
 
 ## Example
 
-{{< p5-global-iframe quadrille="true" width="665" height="340" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 // Set the cell size (default is 100, changed to 20 here)
 Quadrille.cellLength = 20;
@@ -33,7 +33,7 @@ function draw() {
   // Draw the second quadrille with an x-offset of 330 pixels
   drawQuadrille(q2, { x: 330 });
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

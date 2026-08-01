@@ -1,5 +1,5 @@
 ---
-weight: 6
+weight: 5
 title: fill(row, value)  
 ---
 
@@ -8,7 +8,7 @@ Fills an entire row in the quadrille with the specified `value`.
 ## Example
 
 (click on a row to fill it with white; press any key to reset)  
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}  
+{{< p5 quadrille="true" >}}  
 'use strict';  
 Quadrille.cellLength = 20;  
 let quadrille;  
@@ -36,7 +36,7 @@ function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));  
   quadrille.rand(100, color('lime')).rand(100, color('blue'));  
 }  
-{{< /p5-global-iframe >}}  
+{{< /p5 >}}  
 
 {{% details title="code" open=true %}}  
 ```js  
@@ -80,4 +80,4 @@ function reset() {
 | `row`     | Number: The row index to fill [[0..height]]({{< ref "height" >}})             |  
 | `value`[^1] | Any: A valid JavaScript value                                                   |
 
-[^1]: If `value` is a function, it is evaluated **per cell**. Use `Quadrille.factory(({ row, col }) => new Object(...))` to generate a new object per cell. For display routines, use a plain function like `({ row, col, options }) => { ... }`. See [`options`]({{< relref display_fns >}}) for available parameters.
+[^1]: A plain function `value` is **stored, not called** — it becomes a per-cell display routine `({ row, col, options }) => { ... }` (see [`options`]({{< relref display_fns >}})). To have a function **evaluated per cell** at fill time — a fresh object or a varied tile per cell — tag it: `Quadrille.factory(({ row, col }) => new Object(...))`.
