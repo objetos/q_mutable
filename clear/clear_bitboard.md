@@ -1,5 +1,5 @@
 ---
-weight: 5
+weight: 4
 title: clear(bitboard, littleEndian?)
 ---
 
@@ -12,7 +12,7 @@ To use little-endian ordering instead, pass `true` as the second argument.
 ## Example
 
 (click to toggle clearing the smiley pattern)  
-{{< p5-global-iframe quadrille="true" width="375" height="375" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 50;
 
@@ -36,7 +36,7 @@ function mousePressed() {
   cleared ? quadrille.fill(color('black')) : quadrille.clear(SMILEY);
   cleared = !cleared;
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -62,9 +62,13 @@ function mousePressed() {
   cleared ? quadrille.fill(color('black')) : quadrille.clear(SMILEY);
   cleared = !cleared;
 }
-````
+```
 
 {{% /details %}}
+
+{{< callout type="warning" >}}
+The bitboard must be a **BigInt** (note the `n` suffix: `0b0011100n`). A plain Number is dispatched as [clear(row)]({{< ref "clear_row" >}}) instead — silently clearing a row, not a pattern.
+{{< /callout >}}
 
 ## Syntax
 
@@ -74,5 +78,5 @@ function mousePressed() {
 
 | Param          | Description                                                                                          |
 | -------------- | ---------------------------------------------------------------------------------------------------- |
-| `bitboard`     | BigInt (or Number): A bitboard whose binary `1` bits indicate the cells to clear                     |
+| `bitboard`     | BigInt: A bitboard whose binary `1` bits indicate the cells to clear                                 |
 | `littleEndian` | Optional Boolean: If `true`, the bitboard is interpreted in little-endian order (default is `false`) |

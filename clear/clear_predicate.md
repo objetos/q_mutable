@@ -8,7 +8,7 @@ Clears all cells that match a given condition, setting their values to `null`.
 ## Example
 
 (move the mouse to clear all `🐉` from the current column; click to reset)  
-{{< p5-global-iframe quadrille="true" width="425" height="425" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 
 Quadrille.cellLength = 40;
@@ -36,7 +36,7 @@ function mouseClicked() {
 function reset() {
   quadrille = createQuadrille(10, 10, 20, '🐉').rand(20, '🐹').rand(20, '🐭');
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js

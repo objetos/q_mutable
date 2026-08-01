@@ -1,14 +1,14 @@
 ---
-weight: 6
+weight: 8
 title: clear(row, col, directions, border)
 ---
 
-Clears a specific cell and all connected cells in the quadrille based on the specified `directions`, using a [flood fill](https://en.wikipedia.org/wiki/Flood_fill) algorithm. The `border` parameter determines if the clearing includes the boundary of the flood fill area.
+Clears a specific cell and all connected cells **holding the same value as it**, spreading in 4 or 8 `directions` via [flood fill](https://en.wikipedia.org/wiki/Flood_fill); with `border = true`, the **rim** where the flood stops is cleared too. The full form of the flood-clear family.
 
 ## Example
 
 (click on any cell to perform flood fill based on selected options; press any key to reset)\
-{{< p5-global-iframe quadrille="true" width="425" height="445" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 20;
 let quadrille;
@@ -57,7 +57,7 @@ function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));
   quadrille.rand(100, color('lime')).rand(100, color('blue'));
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -110,6 +110,10 @@ function reset() {
 }
 ```
 {{% /details %}}
+
+{{< callout type="info" >}}
+**Connected means same value, and sameness is identity** (`===`) — see [clear(row, col, directions)]({{< ref "clear_row_col_directions" >}}) for the identity note and [clear(row, col, border)]({{< ref "clear_row_col_border" >}}) for the rim semantics.
+{{< /callout >}}
 
 ## Syntax
 

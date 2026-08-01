@@ -1,14 +1,14 @@
 ---
-weight: 9
+weight: 6
 title: clear(row, col, directions)
 ---
 
-Clears a specific cell and all connected cells in the quadrille based on the specified `directions`, using a [flood fill](https://en.wikipedia.org/wiki/Flood_fill) algorithm.
+Clears a specific cell and all connected cells **holding the same value as it**, spreading in 4 or 8 `directions` via [flood fill](https://en.wikipedia.org/wiki/Flood_fill).
 
 ## Example
 
 (click on any cell to perform flood fill based on selected directions; press any key to reset)\
-{{< p5-global-iframe quadrille="true" width="425" height="445" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 20;
 let quadrille;
@@ -43,7 +43,7 @@ function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));
   quadrille.rand(100, color('lime')).rand(100, color('blue'));
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -82,6 +82,10 @@ function reset() {
 }
 ```
 {{% /details %}}
+
+{{< callout type="info" >}}
+**Connected means same value, and sameness is identity.** The flood expands only through cells holding the start cell's exact value (`===`) and stops at anything else. Cells filled by one [fill(value)]({{< ref "fill_value" >}}) call share one instance and flood as one region; per-cell instances — e.g. a fresh `color('green')` per cell via `Quadrille.factory` — would stop the flood at every cell. Flood-clearing from an **empty** cell is a no-op: the region's value is already the cleared one.
+{{< /callout >}}
 
 ## Syntax
 

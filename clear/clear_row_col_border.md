@@ -1,14 +1,14 @@
 ---
-weight: 8
+weight: 7
 title: clear(row, col, border)
 ---
 
-Clears a specific cell and all connected cells in the quadrille using a [flood fill](https://en.wikipedia.org/wiki/Flood_fill) algorithm. The `border` parameter determines if the clearing includes the boundary of the flood fill area.
+Clears a specific cell and all connected cells **holding the same value as it** via [flood fill](https://en.wikipedia.org/wiki/Flood_fill); with `border = true`, the **rim** where the flood stops is cleared too.
 
 ## Example
 
 (click on any cell to perform flood fill with selected border option; press any key to reset)\
-{{< p5-global-iframe quadrille="true" width="425" height="445" >}}
+{{< p5 quadrille="true" >}}
 'use strict';
 Quadrille.cellLength = 20;
 let quadrille;
@@ -43,7 +43,7 @@ function reset() {
   quadrille = createQuadrille(20, 20, 100, color('red'));
   quadrille.rand(100, color('lime')).rand(100, color('blue'));
 }
-{{< /p5-global-iframe >}}
+{{< /p5 >}}
 
 {{% details title="code" open=true %}}
 ```js
@@ -82,6 +82,10 @@ function reset() {
 }
 ```
 {{% /details %}}
+
+{{< callout type="info" >}}
+**Connected means same value, and sameness is identity** (`===`) — see [clear(row, col, directions)]({{< ref "clear_row_col_directions" >}}). With `border = true`, the flood also clears the **rim**: the non-matching cells adjacent to the region, exactly where the expansion stops — the classic Minesweeper cascade, revealing the numbers that surround a cleared area.
+{{< /callout >}}
 
 ## Syntax
 
