@@ -33,5 +33,6 @@ quadrille.randomize();
 - **[replace(args)]({{< ref "replace" >}}):** Replaces cell values in the `quadrille`, either targeting non-empty cells or swapping one value for another.  
 - **[clear(args)]({{< ref "clear" >}}):** Clears content from the entire `quadrille` or specific cells, depending on `args`.  
 - **[fill(args)]({{< ref "fill" >}}):** Fills the entire `quadrille` or specific cells with a specified value provided in `args`.  
+- **[maze(value)]({{< ref "maze" >}}):** Clears the `quadrille`, then generates a perfect maze at the current dimensions, filling wall cells with `value`.  
 
 **Mutator methods** offer you a flexible approach to manipulating `quadrille` instances, enabling operations such as deletion, insertion, replacement, and randomization of cell content. With support for method chaining, these transformations can be combined seamlessly to perform complex modifications in a clear and concise manner.  
