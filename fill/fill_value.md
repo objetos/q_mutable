@@ -78,7 +78,7 @@ Empty cells appear black because the background is set to black (`background(0)`
 {{< /callout >}}
 
 {{< callout type="info" >}}
-**One value, one instance.** A non-factory `value` is stored **as-is in every cell**: all cells filled by the call share the same instance. That single fact powers two idioms elsewhere in the API — strict [search]({{< ref "search" >}}) matches across cells (`===`), and [flood fill]({{< ref "fill_row_col_value_directions" >}})/[flood clear]({{< ref "clear_row_col_directions" >}}) treat them as one connected region, since the flood matches the start cell's value by identity. Per-cell instances instead — e.g. a fresh `color('green')` per cell via `Quadrille.factory` — would strict-match nothing and flood nowhere.
+**One value, one instance.** A non-factory `value` is stored **as-is in every cell**: all cells filled by the call share the same instance. That single fact powers two idioms elsewhere in the API — strict [search]({{< ref "search" >}}) matches across cells (`===`), and [flood fill]({{< ref "fill_row_col_value_directions" >}})/[flood clear]({{< ref "clear_row_col_directions" >}}) treat them as one connected region, since the flood matches the start cell's value by identity. Per-cell instances instead — e.g. a fresh `color('green')` per cell via `Quadrille.factory` — would strict-match nothing and flood nowhere. When sharing is the point, `Quadrille.singleton(value)` names the intent in code: a pure identity function — the value passes through unmodified — that reads as the semantic mirror of `Quadrille.factory`.
 {{< /callout >}}
 
 ## Syntax
