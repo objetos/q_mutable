@@ -89,7 +89,7 @@ Odd dimensions are canonical. On even ones a warning is issued and the trailing 
 {{< callout type="info" >}}
 **Recipes**
 - **Braiding:** `board.maze(wall).rand(k)` clears `k` random filled cells, turning a perfect maze into a loopy one.
-- **Level authoring:** `createQuadrille(w, h).maze(wall)` → [toBigInt]({{< ref "to_bigint" >}}) → ship the result as a `const` bitboard. Decode with the **same dimensions and endianness**: a mismatched decode shifts the pattern.
+- **Level authoring:** `createQuadrille(w, h).maze(wall)` → [toBigInt]({{< ref "to_bigint" >}}) → ship the result as a `const` bitboard; decode via [createQuadrille(w, h, LEVEL, wall)]({{< relref "create_quadrille_width_height_bigint_value" >}}) with the **same dimensions and endianness**: a mismatched decode shifts the pattern.
 - **Pathfinding:** [reach]({{< ref "reach" >}}) and [path]({{< ref "path" >}}) treat any filled cell as an obstacle — no maze required.
 {{< /callout >}}
 
