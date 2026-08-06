@@ -12,13 +12,13 @@ Replaces all cells containing `value1` — matched by identity (`===`) — with 
 'use strict';  
 Quadrille.cellLength = 40;
 let quadrille;  
-let red, lime, blue;
+let tomato, lime, dodgerblue;
 
 function setup() {  
   createCanvas(400, 400);  
-  red = color('red');  
+  tomato = color('tomato');  
   lime = color('lime');  
-  blue = color('blue');  
+  dodgerblue = color('dodgerblue');  
   reset();  
 }  
 
@@ -39,8 +39,8 @@ function keyPressed() {
 }  
 
 function reset() {  
-  quadrille = createQuadrille(10, 10, 25, red);
-  quadrille.rand(25, lime).rand(25, blue);  
+  quadrille = createQuadrille(10, 10, 25, tomato);
+  quadrille.rand(25, lime).rand(25, dodgerblue);  
 }
 {{< /p5 >}}  
 
@@ -48,13 +48,13 @@ function reset() {
 ```js  
 Quadrille.cellLength = 40;
 let quadrille;  
-let red, lime, blue;
+let tomato, lime, dodgerblue;
 
 function setup() {  
   createCanvas(400, 400);  
-  red = color('red');  
+  tomato = color('tomato');  
   lime = color('lime');  
-  blue = color('blue');  
+  dodgerblue = color('dodgerblue');  
   reset();  
 }  
 
@@ -75,8 +75,8 @@ function keyPressed() {
 }  
 
 function reset() {  
-  quadrille = createQuadrille(10, 10, 25, red);
-  quadrille.rand(25, lime).rand(25, blue);  
+  quadrille = createQuadrille(10, 10, 25, tomato);
+  quadrille.rand(25, lime).rand(25, dodgerblue);  
 }
 ```  
 {{% /details %}}  
