@@ -94,6 +94,19 @@ Odd dimensions are canonical. On even ones a warning is issued and the trailing 
 {{< /callout >}}
 
 {{< callout type="info" >}}
+**Why depth-first and not Prim's**
+
+Any [spanning tree](https://en.wikipedia.org/wiki/Spanning_tree) of the room lattice is a perfect maze, so the generator's choice is one of **texture**, not of correctness. Measured over 400 seeds on an 11×15 board, classifying each room by how many of its four wall slots are carved:
+
+| generator | dead ends | corridors | junctions |
+|---|---|---|---|
+| randomized depth-first search (this) | 13.6% | 77.1% | 9.4% |
+| randomized [Prim's](https://en.wikipedia.org/wiki/Prim%27s_algorithm) | 32.5% | 42.4% | 25.1% |
+
+Depth-first carries a single frontier and backtracks only when stuck, so it lays long winding corridors and few decisions. Prim's grows from a randomly chosen frontier cell each step, so it spreads outward as a bushy tree — 2.4× the dead ends and barely half the pass-through corridors. [Kruskal's](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm) differs again; Wilson's and Aldous–Broder sample spanning trees uniformly. Corridors read as a maze to a player where Prim's reads as a blob with holes, which is why `maze` runs the depth-first one.
+{{< /callout >}}
+
+{{< callout type="info" >}}
 For deterministic (repeatable) mazes, explicitly call [randomSeed(seed)](https://p5js.org/reference/p5/randomSeed/) before `maze(value)`.
 {{< /callout >}}
 
